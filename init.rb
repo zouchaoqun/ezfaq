@@ -16,7 +16,7 @@ Redmine::Plugin.register :ezfaq_plugin do
     permission :view_faqs, {:ezfaq => [:index, :show]}, :public => true
     permission :ask_questions, {:ezfaq => [:new]}, :require => :loggedin
     permission :edit_faqs, {:ezfaq => [:edit, :answer, :destroy_attachment]}, :require => :member
-    permission :manage_faq_categories, {:ezfaq => [:add_faq_category], :faq_categories => [:edit, :destroy]}, :require => :member
+    permission :manage_faq_categories, {:ezfaq => [:add_faq_category], :faq_categories => [:index, :edit, :destroy]}, :require => :member
 
   end
 
