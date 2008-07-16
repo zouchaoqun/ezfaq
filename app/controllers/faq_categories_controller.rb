@@ -18,11 +18,16 @@
 class FaqCategoriesController < ApplicationController
   unloadable
   
-  layout 'base'  
-  before_filter :find_project, :authorize
+  layout 'base'
+  menu_item :ezfaq, :only => [:index, :edit, :destroy]
   
+  before_filter :find_project, :authorize
   verify :method => :post, :only => :destroy
 
+  def index
+    @categories = FaqCategory.find(:all, :conditions => "project_id = #{@project.id}")
+  end
+  
   def edit
     if request.post? and @category.update_attributes(params[:category])
       flash[:notice] = l(:notice_successful_update)

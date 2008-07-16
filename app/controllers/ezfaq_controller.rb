@@ -68,7 +68,7 @@ class EzfaqController < ApplicationController
   	  respond_to do |format|
         format.html do
           flash[:notice] = l(:notice_successful_create)
-          redirect_to :action => 'index', :id => @project
+          redirect_to :controller => 'faq_categories', :action => 'index', :id => @project
         end
         format.js do
           faq_categories = FaqCategory.find(:all, :conditions => "project_id = #{@project.id}")

@@ -3,6 +3,7 @@ label_ezfaq: ezFAQ 插件
 label_title_ezfaq: FAQ
 label_faq: 常见问题解决方案
 label_faq_new: 新建FAQ
+label_faq_category: FAQ类别
 label_faq_category_new: 新建FAQ类别
 label_valid: 有效
 label_invalid: 无效
@@ -16,4 +17,5 @@ field_related_version: 相关版本
 field_faq_is_valid: 是否有效
 field_faq_related_issue: 相关问题
 field_faq_related_message: 相关讨论区帖子
+field_faq_category_list_order: 排列顺序
 
