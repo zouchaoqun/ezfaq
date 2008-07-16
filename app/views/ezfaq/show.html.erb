@@ -1,0 +1,56 @@
+<div class="contextual">
+link_if_any
+</div>
+
+<h2>FAQ #<%= @faq.id %></h2>
+
+<div class="question" >
+
+<h3><%=h @faq.question %></h3>
+<p class="author">
+<%= authoring @faq.created_on, @faq.author %>.
+<%= l(:label_updated_time, distance_of_time_in_words(Time.now, @faq.updated_on)) + '.' if @faq.created_on != @faq.updated_on %>
+</p>
+
+<table width="100%">
+<tr>
+    <td style="width:15%"><b><%=l(:field_category)%>:</b></td><td style="width:35%"><%= @faq.category ? @faq.category : "-" %></td>
+    <td style="width:15%"><b><%=l(:field_difficulty)%>:</b></td><td style="width:35%"><%= @faq.difficulty %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_assigned_to)%>:</b></td><td><%= @faq.assigned_to ? link_to_user(@faq.assigned_to) : "-"%></td>
+    <td><b><%=l(:field_due_date)%>:</b></td><td><%= format_date(@faq.due_date) %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_faq_related_issue)%>:</b></td><td><%= @faq.related_issue_id ? link_to_issue(@faq.issue):"-" %></td>
+    <td><b><%=l(:field_faq_related_message)%>:</b></td><td><%= @faq.related_message_id ? link_to_message(@faq.message):"-" %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_faq_is_valid)%>:</b></td><td><%= @faq.is_valid ? l(:label_valid):l(:label_invalid) %></td>
+    <td><b><%=l(:field_viewed_count)%>:</b></td><td><%= @faq.viewed_count %></td>
+</tr>
+</table>
+
+<hr />
+<p><strong><%=l(:field_answer)%></strong></p>
+<div class="wiki">
+<%= textilizable @faq, :answer, :attachments => @faq.attachments %>
+</div>
+
+<% if @faq.attachments.any? %>
+<hr />
+<%= link_to_attachments @faq.attachments, :delete_url => (authorize_for('ezfaq', 'destroy_attachment') ? {:controller => 'ezfaq', :action => 'destroy_attachment', :id => @project, :faq_id => @faq} : nil) %>
+<% end %>
+
+</div>
+
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'ezfaq/sidebar' %>
+<% end %>
+
+<% html_title "#{l(:label_title_ezfaq)}##{@faq.id}: #{@faq.question}" -%>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag '/plugin_assets/ezfaq_plugin/stylesheets/ezfaq' %>
+<% end %>

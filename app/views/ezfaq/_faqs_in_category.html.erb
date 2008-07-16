@@ -1,0 +1,5 @@
+<ul>
+<% for faq in faqs_in_category -%>	
+  <li><%= link_to faq.question, :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => faq %></li>
+<% end %>
+</ul>

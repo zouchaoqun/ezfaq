@@ -1,0 +1,27 @@
+<p><%= f.text_field :question, :size => 80, :required => true %></p>
+<p><%= f.text_area :answer,
+                   :cols => 60,
+                   :rows => (@faq.answer.blank? ? 10 : [[10, @faq.answer.length / 50].max, 100].min),
+                   :accesskey => accesskey(:edit),
+                   :class => 'wiki-edit' %></p>
+             
+<div class="splitcontentleft">
+<p><%= f.select :difficulty, (1..10), :required => true %></p>
+<p><%= f.select :category_id, (@faq_categories.collect {|c| [c.name, c.id]}), :include_blank => true %>
+<%= prompt_to_remote(l(:label_faq_category_new),
+                     l(:label_faq_category_new), 'category[name]', 
+                     {:controller => 'ezfaq', :action => 'add_faq_category', :id => @project},
+                     :class => 'small', :tabindex => 199) if authorize_for('ezfaq', 'add_faq_category') %></p>
+<p><%= f.select :related_version_id, (1..3), :include_blank => true %></p>
+</div>
+
+<div class="splitcontentright">
+<p><%= f.text_field :due_date, :size => 10 %><%= calendar_for('faq_due_date') %></p>
+<p><%= f.select :assigned_to_id, (@project.assignable_users.collect {|m| [m.name, m.id]}), :include_blank => true %></p>
+</div>
+<p />
+<% if @faq.new_record? %>
+<p><label><%=l(:label_attachment_plural)%></label><%= render :partial => 'attachments/form' %></p>
+<% end %>
+
+<%= wikitoolbar_for 'faq_answer' %>

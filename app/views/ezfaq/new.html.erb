@@ -1,0 +1,12 @@
+<h2><%=l(:label_faq_new)%></h2>
+
+<% labelled_tabular_form_for :faq, @faq, 
+                             :html => {:multipart => true, :id => 'faq-form'} do |f| %>
+    <%= error_messages_for 'faq' %>
+    <div class="box">
+    <%= render :partial => 'ezfaq/form', :locals => {:f => f} %>
+    </div>
+    <%= submit_tag l(:button_create) %>
+<% end %>
+
+<% html_title(l(:label_title_ezfaq)) -%>

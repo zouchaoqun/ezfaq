@@ -1,0 +1,19 @@
+# ezFAQ plugin
+label_ezfaq: ezFAQ 插件
+label_title_ezfaq: FAQ
+label_faq: 常见问题解决方案
+label_faq_new: 新建FAQ
+label_faq_category_new: 新建FAQ类别
+label_valid: 有效
+label_invalid: 无效
+label_not_categorized: 未分类
+
+field_question: 问题
+field_answer: 解答
+field_difficulty: 难度
+field_viewed_count: 查看次数
+field_related_version: 相关版本
+field_faq_is_valid: 是否有效
+field_faq_related_issue: 相关问题
+field_faq_related_message: 相关讨论区帖子
+

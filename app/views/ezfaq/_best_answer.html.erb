@@ -1,0 +1,11 @@
+<div class="best_answer">
+  <h3><%= l(:label_best_answer) %></h3>
+  <p class="author">
+    <%= authoring answer.created_on, answer.answerer %>.
+    <%= l(:label_updated_time, distance_of_time_in_words(Time.now, answer.updated_on)) + '.' if answer.created_on != answer.updated_on %>
+  </p>
+
+  <div class="wiki">
+    <%= textilizable answer, :answer, :attachments => answer.attachments %>
+  </div>
+</div>

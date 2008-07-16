@@ -1,0 +1,47 @@
+== ezFAQ plugin
+
+This is a FAQ management plugin for Redmine
+
+== Installation
+
+=== Adding plugin support to Redmine
+
+To add plugin support to Redmine, install engines plugin:
+   See: http://rails-engines.org/
+
+=== Plugin installation
+
+1. Install will_paginate gem
+   gem install will_paginate
+
+2. Add will_paginate to the last of enviroment.rb
+   require 'will_paginate'
+
+3. Copy the plugin directory into the vendor/plugins directory
+
+2. Migrate plugin:
+   rake db:migrate_plugins
+
+3. Start Redmine
+
+Installed plugins are listed on 'Admin -> Information' screen.
+
+
+=== Note
+
+faq attributes
+1. is_valid 说明问题是否有效，管理员可以将问题设置为无效或者有效，无效问题不可回答，不能导出pdf
+2. best_answer_id 不为null说明已有最佳答案，有最佳答案后可以导出
+3. difficulty 问题难度，可用来计算积分，从1－10由易到难，默认为5
+4. related_version_id 相关版本，因为某个问题可能在别的版本不会出现
+
+usage
+1. 每个问题有一个问题和一个回答，每次修改都保存记录，如同wiki
+2. 管理员可以对新问题指派回答人员，通过自动生成issue来实现
+3. 问题及答案只能由作者或者管理员修改
+4. 问题可以有多个评论。
+##4. 每个问题有评分记录，每个用户只能对问题评论一次。暂缓
+##5. 导出时可以调整问题顺序，问题类别可以调整顺序。暂缓
+
+pages
+1. welcome 显示最新提问，最新回答，用户答题数量统计
