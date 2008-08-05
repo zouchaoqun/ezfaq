@@ -1,0 +1,11 @@
+<h2><%= l(:label_settings) %></h2>
+
+<div id="settings">
+<% form_for :faq_setting do |f| %>
+<div class="box tabular">
+  <p><label><%=l(:label_faq_note)%></label>
+  <%= f.text_area :note, :cols => 60, :rows => 4 %></p>
+</div>
+<%= submit_tag l(:button_save) %>
+<% end %>
+</div>

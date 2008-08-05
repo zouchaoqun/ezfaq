@@ -1,6 +1,23 @@
-<h3><%= l(:label_issue_plural) %></h3>
-<%= link_to l(:label_issue_view_all), { :controller => 'issues', :action => 'index', :project_id => @project, :set_filter => 1 } %><br />
-<% if @project %>
-<%= link_to l(:field_summary), :controller => 'reports', :action => 'issue_report', :id => @project %><br />
-<%= link_to l(:label_change_log), :controller => 'projects', :action => 'changelog', :id => @project %>
+<% label_manage_showed = false %>
+
+<% if User.current.allowed_to?(:manage_faq_categories, @project, :global => true) %>
+  <h3><%= l(:label_manage) %></h3>
+  <% label_manage_showed = true %>
+  <%= link_to l(:label_manage_faq_category), { :controller => 'faq_categories', :action => 'index', :id => @project } %>
+  <br />
 <% end %>
+
+<% if User.current.allowed_to?(:edit_faqs, @project, :global => true) %>
+  <% if not label_manage_showed %>
+  <h3><%= l(:label_manage) %></h3>
+  <% end %>
+  <%= link_to l(:label_view_invalid_faqs), { :controller => 'ezfaq', :action => 'list_invalid_faqs', :id => @project } %>
+  <br />
+<% end %>
+
+<% if User.current.allowed_to?(:faq_setting, @project, :global => true) %>
+  <h3><%= l(:label_settings) %></h3>
+  <%= link_to l(:label_faq_setting), { :controller => 'ezfaq', :action => 'faq_setting', :id => @project } %>
+  <br />
+<% end %>
+

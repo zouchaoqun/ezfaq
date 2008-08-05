@@ -1,0 +1,20 @@
+<h3><%= l(:label_history) %> (FAQ<%= @faq %>)</h3>
+<table class="list">
+<thead><tr>
+    <th><%= l(:field_version) %></th>
+    <th><%= l(:field_updated_on) %></th>
+    <th><%= l(:field_author) %></th>
+</tr></thead>
+<tbody>
+<% line_num = 1 %>
+<% @versions.each do |ver| %>
+<tr class="<%= cycle("odd", "even") %>">
+    <td class="id"><%= link_to ver.version, :action => 'show_history_version', :id => @project, :faq_id => @faq, :version => ver.version %></td>
+    <td align="center"><%= format_time(ver.updated_on) %></td>
+    <td><em><%= ver.updater %></em></td>
+</tr>
+<% line_num += 1 %>
+<% end %>
+</tbody>
+</table>
+<span class="pagination"><%= will_pagination_links @versions %></span>

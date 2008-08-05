@@ -1,33 +1,41 @@
 <div class="contextual">
-link_if_any
+<%= link_to_if_authorized(l(:button_update), {:controller => 'ezfaq', :action => 'edit', :id => @project, :faq_id => @faq}, :class => 'icon icon-edit', :accesskey => accesskey(:edit)) %>
+<%= link_to_if_authorized l(:button_delete), {:controller => 'ezfaq', :action => 'destroy', :id => @project, :faq_id => @faq}, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-del' %>
+<%= link_to(l(:label_history), {:action => 'history', :id => @project, :faq_id => @faq}, :class => 'icon icon-history') %>
 </div>
 
 <h2>FAQ #<%= @faq.id %></h2>
 
-<div class="question" >
+<div class="faq" >
 
 <h3><%=h @faq.question %></h3>
 <p class="author">
 <%= authoring @faq.created_on, @faq.author %>.
-<%= l(:label_updated_time, distance_of_time_in_words(Time.now, @faq.updated_on)) + '.' if @faq.created_on != @faq.updated_on %>
+<%= updated_by(@faq.updated_on, @faq.updater) + '.' if @faq.created_on != @faq.updated_on %>
 </p>
 
 <table width="100%">
 <tr>
-    <td style="width:15%"><b><%=l(:field_category)%>:</b></td><td style="width:35%"><%= @faq.category ? @faq.category : "-" %></td>
-    <td style="width:15%"><b><%=l(:field_difficulty)%>:</b></td><td style="width:35%"><%= @faq.difficulty %></td>
+    <td style="width:15%"><b><%=l(:field_category)%>:</b></td>
+    <td style="width:35%"><%= @faq.category ? @faq.category : "-" %></td>
+    <td style="width:15%"><b><%=l(:field_difficulty)%>:</b></td>
+    <td style="width:35%"><%= image_tag("stars_#{@faq.difficulty}.gif", :plugin => "ezfaq_plugin", :alt => "#{l(:field_difficulty)}#{@faq.difficulty}", :title => "#{l(:field_difficulty)}#{@faq.difficulty}") %></td>
 </tr>
 <tr>
     <td><b><%=l(:field_assigned_to)%>:</b></td><td><%= @faq.assigned_to ? link_to_user(@faq.assigned_to) : "-"%></td>
     <td><b><%=l(:field_due_date)%>:</b></td><td><%= format_date(@faq.due_date) %></td>
 </tr>
 <tr>
-    <td><b><%=l(:field_faq_related_issue)%>:</b></td><td><%= @faq.related_issue_id ? link_to_issue(@faq.issue):"-" %></td>
-    <td><b><%=l(:field_faq_related_message)%>:</b></td><td><%= @faq.related_message_id ? link_to_message(@faq.message):"-" %></td>
+    <td><b><%=l(:field_related_issue)%>:</b></td><td><%= @faq.issue ? link_to_issue(@faq.issue):"-" %></td>
+    <td><b><%=l(:field_related_message)%>:</b></td><td><%= @faq.message ? link_to_message(@faq.message):"-" %></td>
 </tr>
 <tr>
-    <td><b><%=l(:field_faq_is_valid)%>:</b></td><td><%= @faq.is_valid ? l(:label_valid):l(:label_invalid) %></td>
+    <td><b><%=l(:field_related_version)%>:</b></td><td><%= @faq.related_version ? link_to(h(@faq.related_version.name), :controller => 'versions', :action => 'show', :id => @faq.related_version):"-" %></td>
     <td><b><%=l(:field_viewed_count)%>:</b></td><td><%= @faq.viewed_count %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_is_valid)%>:</b></td><td><%= @faq.is_valid ? l(:label_valid):"<span class='attention'>#{l(:label_invalid)}</span>" %></td>
+    <td></td><td></td>
 </tr>
 </table>
 
@@ -43,7 +51,6 @@ link_if_any
 <% end %>
 
 </div>
-
 
 <% content_for :sidebar do %>
     <%= render :partial => 'ezfaq/sidebar' %>

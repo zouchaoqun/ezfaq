@@ -1,5 +1,9 @@
 <ul>
 <% for faq in faqs_in_category -%>	
-  <li><%= link_to faq.question, :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => faq %></li>
+  <% if faq.answer.length > 0 %>
+    <li><span class="icon icon-green-right"><%= link_to faq.question, :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => faq %></span></li>
+  <% else %>
+    <li><span class="icon icon-question"><%= link_to faq.question, :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => faq %></span></li>
+  <% end %>
 <% end %>
 </ul>

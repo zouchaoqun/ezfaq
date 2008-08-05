@@ -1,0 +1,34 @@
+<h2><%= l(:label_invalid_faqs) %></h2>
+
+<% if @invalid_faqs.any? %>
+  <table class="list">
+    <thead><tr>
+      <%= sort_header_tag("#{Faq.table_name}.id", :caption => '#') %>
+      <%= sort_header_tag("#{Faq.table_name}.question", :caption => l(:field_question)) %>
+      <%= sort_header_tag("#{Faq.table_name}.category_id", :caption => l(:field_category)) %>
+      <%= sort_header_tag("#{Faq.table_name}.viewed_count", :caption => l(:field_viewed_count)) %>
+      <%= sort_header_tag("#{Faq.table_name}.author_id", :caption => l(:field_author)) %>
+      <%= sort_header_tag("#{Faq.table_name}.updated_on", :caption => l(:field_updated_on), :default_order => 'desc') %>
+    </tr></thead>
+    <tbody>
+  <% for faq in @invalid_faqs -%>	
+    <tr class="<%= cycle("odd", "even") %>">
+      <td><%= faq.id %></td>
+      <td><%= link_to faq.question, :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => faq %></td>
+      <td><%= faq.category %></td>
+      <td><%= faq.viewed_count %> </td>
+      <td><%= faq.author %></td>
+      <td align="center"><%= format_time(faq.updated_on) %></td>
+    </tr>		
+  <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'ezfaq/sidebar' %>
+<% end %>
+
+<% html_title(l(:label_invalid_faqs)) -%>

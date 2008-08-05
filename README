@@ -1,4 +1,4 @@
-== ezFAQ plugin
+== ezFAQ plugin 0.0.1
 
 This is a FAQ management plugin for Redmine
 
@@ -27,21 +27,13 @@ To add plugin support to Redmine, install engines plugin:
 Installed plugins are listed on 'Admin -> Information' screen.
 
 
-=== Note
+=== Feature
 
-faq attributes
-1. is_valid 说明问题是否有效，管理员可以将问题设置为无效或者有效，无效问题不可回答，不能导出pdf
-2. best_answer_id 不为null说明已有最佳答案，有最佳答案后可以导出
-3. difficulty 问题难度，可用来计算积分，从1－10由易到难，默认为5
-4. related_version_id 相关版本，因为某个问题可能在别的版本不会出现
+1. Ask question and request a user to answer it.
+2. FAQ is grouped by categories.
+3. FAQ's modification has history logs.
 
-usage
-1. 每个问题有一个问题和一个回答，每次修改都保存记录，如同wiki
-2. 管理员可以对新问题指派回答人员，通过自动生成issue来实现
-3. 问题及答案只能由作者或者管理员修改
-4. 问题可以有多个评论。
-##4. 每个问题有评分记录，每个用户只能对问题评论一次。暂缓
-##5. 导出时可以调整问题顺序，问题类别可以调整顺序。暂缓
+=== Roadmap
 
-pages
-1. welcome 显示最新提问，最新回答，用户答题数量统计
+0.0.2 -> Send notify email to the assigned user who should answer the question.
+0.0.3 -> Generate pdf version FAQ document including all valid FAQ.

@@ -5,19 +5,31 @@
 </div>
 
 <h2><%= l(:label_faq) %></h2>
-<p class="subtitle">--------</p>
-
-<% @categorized_faqs.group_by(&:category).sort.each do |category, faqs| %>
-    <h3><%= "#{category.list_order}. #{category.name}" %></h3>
-    <%= render :partial => 'ezfaq/faqs_in_category', :object => faqs.sort{|a, b| a.question <=> b.question} %>
+<% if @faq_setting %>
+<p class="subtitle"><%=h @faq_setting.note %></p>
 <% end %>
-<% if @not_categorized_faqs.length > 0 %>
-    <h3><%= "#{@category_count + 1}. #{l(:label_not_categorized)}" %></h3>
-    <%= render :partial => 'ezfaq/faqs_in_category', :object => @not_categorized_faqs %>
+
+<% if @categorized_faqs.any? || @not_categorized_faqs.any? %>
+  <% list_number = 1 %>
+  <% @categorized_faqs.group_by(&:category).sort.each do |category, faqs| %>
+      <h3><%= "#{list_number}. #{category.name}" %></h3>
+      <% list_number += 1 %>
+      <%= render :partial => 'ezfaq/faqs_in_category', :object => faqs.sort %>
+  <% end %>
+  <% if @not_categorized_faqs.length > 0 %>
+      <h3><%= "#{list_number}. #{l(:label_not_categorized)}" %></h3>
+      <%= render :partial => 'ezfaq/faqs_in_category', :object => @not_categorized_faqs %>
+  <% end %>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
 <% end %>
 
 <% content_for :sidebar do %>
     <%= render :partial => 'ezfaq/sidebar' %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag "ezfaq.css", :plugin => "ezfaq_plugin", :media => "screen" %>
 <% end %>
 
 <% html_title(l(:label_title_ezfaq)) -%>

@@ -1,0 +1,11 @@
+<h2>FAQ #<%= @faq.id %></h2>
+
+<% labelled_tabular_form_for :faq, @faq, 
+                             :url => {:action => 'edit', :id => @project, :faq_id => @faq},
+                             :html => {:multipart => true, :id => 'faq-form'} do |f| %>
+    <%= error_messages_for 'faq' %>
+    <div class="box">
+    <%= render :partial => 'ezfaq/edit', :locals => {:f => f} %>
+    </div>
+    <%= submit_tag l(:button_update) %>
+<% end %>

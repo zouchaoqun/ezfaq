@@ -1,0 +1,57 @@
+<div class="contextual">
+</div>
+
+<h2>FAQ#<%= @faq_version.faq_id %> <%=l(:label_version) %><%= @faq_version.version %></h2>
+
+<p>
+<%= link_to(('&#171; ' + l(:label_previous)), :action => 'show_history_version', :id => @project, :faq_id => @faq, :version => (@faq_version.version - 1)) + " - " if @faq_version.version > 1 %>
+<%= "#{l(:label_version)} #{@faq_version.version}/#{@faq.version} -" %>
+<%= link_to((l(:label_next) + ' &#187;'), :action => 'show_history_version', :id => @project, :faq_id => @faq, :version => (@faq_version.version + 1)) + " - " if @faq_version.version < @faq.version %>
+<%= link_to(l(:label_current_version), :action => 'show', :id => @project, :faq_id => @faq) %>
+</p>
+
+<div class="faq" >
+
+<h3><%=h @faq_version.question %></h3>
+<p class="author">
+<%= updated_by(@faq_version.updated_on, @faq_version.updater) + '.'  %>
+</p>
+
+<table width="100%">
+<tr>
+    <td style="width:15%"><b><%=l(:field_category)%>:</b></td>
+    <td style="width:35%"><%= @faq_version.category ? @faq_version.category : "-" %></td>
+    <td style="width:15%"><b><%=l(:field_difficulty)%>:</b></td>
+    <td style="width:35%"><%= image_tag("stars_#{@faq_version.difficulty}.gif", :plugin => "ezfaq_plugin", :alt => "#{l(:field_difficulty)}#{@faq_version.difficulty}", :title => "#{l(:field_difficulty)}#{@faq_version.difficulty}") %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_assigned_to)%>:</b></td><td><%= @faq_version.assigned_to ? link_to_user(@faq_version.assigned_to) : "-"%></td>
+    <td><b><%=l(:field_due_date)%>:</b></td><td><%= format_date(@faq_version.due_date) %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_related_issue)%>:</b></td><td><%= @faq_version.issue ? link_to_issue(@faq_version.issue):"-" %></td>
+    <td><b><%=l(:field_related_message)%>:</b></td><td><%= @faq_version.message ? link_to_message(@faq_version.message):"-" %></td>
+</tr>
+<tr>
+    <td><b><%=l(:field_related_version)%>:</b></td><td><%= @faq_version.related_version ? link_to(h(@faq_version.related_version.name), :controller => 'versions', :action => 'show', :id => @faq_version.related_version):"-" %></td>
+    <td><b><%=l(:field_is_valid)%>:</b></td><td><%= @faq_version.is_valid ? l(:label_valid):"<span class='attention'>#{l(:label_invalid)}</span>" %></td>
+</tr>
+</table>
+
+<hr />
+<p><strong><%=l(:field_answer)%></strong></p>
+<div class="wiki">
+<%= textilizable @faq_version, :answer %>
+</div>
+
+</div>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'ezfaq/sidebar' %>
+<% end %>
+
+<% html_title "#{l(:label_title_ezfaq)}##{@faq.id} #{l(:label_version)}#{@faq_version.version}: #{@faq_version.question}" -%>
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag '/plugin_assets/ezfaq_plugin/stylesheets/ezfaq' %>
+<% end %>

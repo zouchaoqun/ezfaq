@@ -28,7 +28,7 @@ function change_stars() {
                      :class => 'small', :tabindex => 199) if authorize_for('ezfaq', 'add_faq_category') %></p>
 <p>
 <%= f.select :difficulty, (1..10), {}, :required => true, :onchange => "change_stars();"%>
-<%= image_tag("stars_5.gif", :plugin => "ezfaq_plugin", :id => "stars_img", :alt => "#{l(:field_difficulty)}5", :title => "#{l(:field_difficulty)}5") %>
+<%= image_tag("stars_#{@faq.difficulty}.gif", :plugin => "ezfaq_plugin", :id => "stars_img", :alt => "#{l(:field_difficulty)}#{@faq.difficulty}", :title => "#{l(:field_difficulty)}#{@faq.difficulty}") %>
 </p>
 <p><%= f.text_field :related_issue_id, :size => 10 %> <%= l(:label_info_for_input_id) %></p>
 <p><%= f.select :related_version_id, @project.versions.sort.collect {|v| [v.name, v.id]}, :include_blank => true %></p>
@@ -38,13 +38,13 @@ function change_stars() {
 <p><%= f.select :assigned_to_id, (@project.assignable_users.collect {|m| [m.name, m.id]}), :include_blank => true %></p>
 <p><%= f.text_field :due_date, :size => 10 %><%= calendar_for('faq_due_date') %></p>
 <p><%= f.text_field :related_message_id, :size => 10 %> <%= l(:label_info_for_input_id) %></p>
+<p><%= f.select :is_valid, [[l(:label_valid), true], [l(:label_invalid), false]] %> </p>
 </div>
 
 <%= hidden_field_tag 'difficulty_label', l(:field_difficulty) %>
+<%= f.hidden_field :version %>
 
 <p />
-<% if @faq.new_record? %>
 <p><label><%=l(:label_attachment_plural)%></label><%= render :partial => 'attachments/form' %></p>
-<% end %>
 
 <%= wikitoolbar_for 'faq_answer' %>

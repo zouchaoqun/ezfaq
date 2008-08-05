@@ -1,2 +1,6 @@
-div.question {background:#ffffdd; padding:6px; margin-bottom:6px;border: 1px solid #d7d7d7;}
-div.best_answer {background:#eeffff; padding:6px; margin-bottom:6px;border: 1px solid #40d040;}
+div.faq {background:#ffffdd; padding:6px; margin-bottom:6px;border: 1px solid #d7d7d7;}
+
+.icon-question { background-image: url(../images/question.png); }
+.icon-green-right { background-image: url(../images/green_right.png); }
+
+.attention {color: #ff0000;font-weight:bold;}
