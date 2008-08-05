@@ -17,7 +17,7 @@ To add plugin support to Redmine, install engines plugin:
 2. Add will_paginate to the last of enviroment.rb
    require 'will_paginate'
 
-3. Copy the plugin directory into the vendor/plugins directory
+3. Copy the plugin directory(ezfaq_plugin) into the vendor/plugins directory
 
 2. Migrate plugin:
    rake db:migrate_plugins
