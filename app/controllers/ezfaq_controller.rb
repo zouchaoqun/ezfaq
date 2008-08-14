@@ -66,7 +66,7 @@ class EzfaqController < ApplicationController
       if @faq.save
         attach_files(@faq, params[:attachments])
         flash[:notice] = l(:notice_successful_create)
-        #Mailer.deliver_issue_add(@issue) if Setting.notified_events.include?('issue_added')
+        FaqMailer.deliver_faq_add(@project, @faq)
         redirect_to :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => @faq
         return
       end		
@@ -82,7 +82,7 @@ class EzfaqController < ApplicationController
       if @faq.save
         attach_files(@faq, params[:attachments])
         flash[:notice] = l(:notice_successful_update)
-        #Mailer.deliver_issue_add(@issue) if Setting.notified_events.include?('issue_added')
+        FaqMailer.deliver_faq_update(@project, @faq)
         redirect_to :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => @faq
         return
       end

@@ -3,6 +3,7 @@ label_ezfaq: ezFAQ plugin
 label_title_ezfaq: FAQ
 label_faq: FAQ
 label_faq_new: New FAQ
+label_faq_updated: FAQ updated
 label_faq_category: FAQ category
 label_faq_category_new: New FAQ category
 label_manage_faq_category: Manage FAQ category
@@ -30,3 +31,5 @@ field_faq_counts_under_category: FAQ count
 text_faq_category_destroy_question: Some FAQ (%d) is assigned to this category. What do you want to do ?
 text_faq_category_destroy_assignments: Remove category assignments
 text_faq_category_reassign_to: Reassign FAQ to this category
+text_faq_added: FAQ %s has been created by %s.
+text_faq_updated: FAQ %s has been updated by %s.

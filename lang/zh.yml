@@ -3,6 +3,7 @@ label_ezfaq: ezFAQ 插件
 label_title_ezfaq: FAQ
 label_faq: 常见问题解决方案
 label_faq_new: 新建FAQ
+label_faq_updated: FAQ更新
 label_faq_category: FAQ类别
 label_faq_category_new: 新建FAQ类别
 label_manage_faq_category: 管理FAQ类别
@@ -30,3 +31,5 @@ field_faq_counts_under_category: FAQ数量
 text_faq_category_destroy_question: 有一些FAQ（%d 个）属于此类别。您想进行哪种操作？
 text_faq_category_destroy_assignments: 删除FAQ的所属类别（FAQ变为无类别）
 text_faq_category_reassign_to: 为FAQ选择其它类别
+text_faq_added: FAQ %s 已由 %s 创建。
+text_faq_updated: FAQ %s 已由 %s 更新。
