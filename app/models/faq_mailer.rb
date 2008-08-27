@@ -22,8 +22,10 @@ class FaqMailer < Mailer
                     'Faq-Id' => faq.id,
                     'Faq-Author' => faq.author.login
     
-    recipients  [ faq.author.mail ]
-    recipients << faq.assigned_to.mail if faq.assigned_to
+    mail_addresses = [ faq.author.mail ]
+    mail_addresses << faq.assigned_to.mail if faq.assigned_to
+    
+    recipients mail_addresses.compact.uniq
 
     subject "[#{faq.project.name} - #{l(:label_faq_new)} - FAQ##{faq.id}] #{faq.question}"
     body :faq => faq,
@@ -34,10 +36,12 @@ class FaqMailer < Mailer
     redmine_headers 'Project' => faq.project.identifier,
                     'Faq-Id' => faq.id,
                     'Faq-Author' => faq.author.login
-    
-    recipients  [ faq.author.mail ]
-    recipients << faq.assigned_to.mail if faq.assigned_to
 
+    mail_addresses = [ faq.author.mail, faq.updater.mail ]
+    mail_addresses << faq.assigned_to.mail if faq.assigned_to
+
+    recipients  mail_addresses.compact.uniq
+    
     subject "[#{faq.project.name} - #{l(:label_faq_updated)} - FAQ##{faq.id}] #{faq.question}"
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
