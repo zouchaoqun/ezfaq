@@ -82,13 +82,7 @@ class EzfaqController < ApplicationController
       if @faq.save
         attach_files(@faq, params[:attachments])
         flash[:notice] = l(:notice_successful_update)
-        begin
-          @test = FaqMailer.deliver_faq_update(@project, @faq)
-          flash[:notice] = l(:notice_email_sent, User.current.mail)
-        rescue Exception => e
-          flash[:error] = l(:notice_email_error, e.message)
-        end
-        #FaqMailer.deliver_faq_update(@project, @faq)
+        FaqMailer.deliver_faq_update(@project, @faq)
         redirect_to :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => @faq
         return
       end
