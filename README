@@ -21,10 +21,10 @@ It's better to use the 2.1.0 version.
 
 3. Copy the plugin directory(ezfaq_plugin) into the vendor/plugins directory
 
-2. Migrate plugin:
+4. Migrate plugin:
    rake db:migrate_plugins
 
-3. Start Redmine
+5. Start Redmine
 
 Installed plugins are listed on 'Admin -> Information' screen.
 
