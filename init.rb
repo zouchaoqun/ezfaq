@@ -17,20 +17,23 @@
 
 require 'redmine'
 
+# Patches to the Redmine core. Will not work in development mode
+require_dependency 'attachment_patch'
+
 RAILS_DEFAULT_LOGGER.info 'Starting ezFAQ plugin for RedMine'
 
 Redmine::Plugin.register :ezfaq_plugin do
   name 'ezFAQ plugin'
   author 'Zou Chaoqun'
   description 'This is a FAQ management plugin for Redmine'
-  version '0.0.2'
+  version '0.0.3'
 
   # This plugin adds a project module
   # It can be enabled/disabled at project level (Project settings -> Modules)
   project_module :ezfaq do
     permission :view_faqs, {:ezfaq => [:index, :show, :history, :diff, :show_history_version]}, :public => true
-    permission :add_faq, {:ezfaq => [:new]}, :require => :loggedin
-    permission :edit_faq, {:ezfaq => [:edit, :destroy, :destroy_attachment, :list_invalid_faqs]}, :require => :member
+    permission :add_faqs, {:ezfaq => [:new]}, :require => :loggedin
+    permission :edit_faqs, {:ezfaq => [:edit, :destroy, :list_invalid_faqs]}, :require => :member
     permission :manage_faq_categories, {:ezfaq => [:add_faq_category], :faq_categories => [:index, :change_order, :edit, :destroy]}, :require => :member
     permission :faq_setting, {:ezfaq => [:faq_setting]}, :require => :member
   end

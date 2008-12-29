@@ -7,6 +7,8 @@ class Faq < ActiveRecord::Base
   validates_presence_of :question, :project, :difficulty
   validates_length_of :question, :maximum => 255
 
+  acts_as_attachable
+  
   acts_as_versioned :class_name => 'FaqVersion'
   self.non_versioned_columns << 'viewed_count'
   self.non_versioned_columns << 'created_on'
@@ -62,20 +64,8 @@ class Faq < ActiveRecord::Base
     related_version_id ? Version.find(:first, :conditions => "versions.project_id = #{project_id} and versions.id = #{related_version_id}") : nil
   end
   
-  def attachments
-    Attachment.find(:all, :conditions => "attachments.container_type = 'FAQ' and attachments.container_id = #{id}")
-  end
-  
-  def find_attachment(attachment_id)
-    Attachment.find(:first, :conditions => "attachments.container_type = 'FAQ' and attachments.container_id = #{id} and attachments.id = #{attachment_id}")
-  end
-  
   def project
     Project.find(:first, :conditions => "projects.id = #{project_id}")
-  end
-  
-  def after_destroy
-    attachments.each(&:destroy)
   end
   
   def <=>(faq)
@@ -89,5 +79,6 @@ class Faq < ActiveRecord::Base
   
   def to_s
     "##{id}: #{question}"
-  end  
+  end
+
 end

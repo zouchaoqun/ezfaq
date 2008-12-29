@@ -47,7 +47,7 @@
 
 <% if @faq.attachments.any? %>
 <hr />
-<%= link_to_attachments @faq.attachments, :delete_url => (authorize_for('ezfaq', 'destroy_attachment') ? {:controller => 'ezfaq', :action => 'destroy_attachment', :id => @project, :faq_id => @faq} : nil) %>
+<%= link_to_attachments @faq %>
 <% end %>
 
 </div>

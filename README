@@ -1,4 +1,4 @@
-== ezFAQ plugin 0.0.2
+== ezFAQ plugin 0.0.3
 
 This is a FAQ management plugin for Redmine
 
@@ -28,6 +28,12 @@ It's better to use the 2.1.0 version.
 
 Installed plugins are listed on 'Admin -> Information' screen.
 
+=== Changelog
+
+0.0.3 -> Change attatchment related methods, because redmine r2116 has changed it's
+         attatchment manage mechanism.
+         Change permission and menu into gloc strings and now they can be localized.
+
 
 === Feature
 
@@ -36,9 +42,14 @@ Installed plugins are listed on 'Admin -> Information' screen.
 3. FAQ's modification has history logs.
 4. Send notify email to the author and the assigned user who should answer the question.
 
+=== Credits
+
+Thanks for edavis10 at http://github.com/edavis10/ for his redmine core patch.
+(Look at lib/attachment_patch.rb)
+
 === Roadmap
 
-0.0.3 -> Generate pdf version FAQ document including all valid FAQ.
+0.0.4 -> Generate pdf version FAQ document including all valid FAQ.
          (note: maybe delayed, if you need this feature, please let know)
 
 

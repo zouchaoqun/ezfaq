@@ -33,3 +33,11 @@ text_faq_category_destroy_assignments: 删除FAQ的所属类别（FAQ变为无�
 text_faq_category_reassign_to: 为FAQ选择其它类别
 text_faq_added: FAQ %s 已由 %s 创建。
 text_faq_updated: FAQ %s 已由 %s 更新。
+
+permission_view_faqs: 查看FAQ
+permission_add_faqs: 新建FAQ
+permission_edit_faqs: 编辑FAQ
+permission_manage_faq_categories: 管理FAQ类别
+permission_faq_setting: FAQ设置
+
+project_module_ezfaq: FAQ

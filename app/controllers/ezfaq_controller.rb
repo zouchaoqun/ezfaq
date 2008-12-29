@@ -20,7 +20,7 @@ class EzfaqController < ApplicationController
   
   layout 'base'  
   before_filter :find_project, :authorize
-  before_filter :find_faq, :only => [:show, :edit, :destroy, :history, :destroy_attachment, :show_history_version]
+  before_filter :find_faq, :only => [:show, :edit, :destroy, :history, :show_history_version]
   
   helper :attachments
   include AttachmentsHelper
@@ -132,12 +132,6 @@ class EzfaqController < ApplicationController
       end
     end
   end  
-  
-  def destroy_attachment
-    a = @faq.find_attachment(params[:attachment_id])
-    if a then a.destroy end
-    redirect_to :action => 'show', :id => @project, :faq_id => @faq
-  end
   
   def faq_setting
     @faq_setting = FaqSetting.find(:first, :conditions => "project_id = #{@project.id}")
