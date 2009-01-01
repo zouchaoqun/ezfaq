@@ -7,7 +7,7 @@
   <br />
 <% end %>
 
-<% if User.current.allowed_to?(:edit_faq, @project, :global => true) %>
+<% if User.current.allowed_to?(:edit_faqs, @project, :global => true) %>
   <% if not label_manage_showed %>
   <h3><%= l(:label_manage) %></h3>
   <% end %>

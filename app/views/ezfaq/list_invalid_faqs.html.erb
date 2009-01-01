@@ -3,12 +3,12 @@
 <% if @invalid_faqs.any? %>
   <table class="list">
     <thead><tr>
-      <%= sort_header_tag("#{Faq.table_name}.id", :caption => '#') %>
-      <%= sort_header_tag("#{Faq.table_name}.question", :caption => l(:field_question)) %>
-      <%= sort_header_tag("#{Faq.table_name}.category_id", :caption => l(:field_category)) %>
-      <%= sort_header_tag("#{Faq.table_name}.viewed_count", :caption => l(:field_viewed_count)) %>
-      <%= sort_header_tag("#{Faq.table_name}.author_id", :caption => l(:field_author)) %>
-      <%= sort_header_tag("#{Faq.table_name}.updated_on", :caption => l(:field_updated_on), :default_order => 'desc') %>
+      <%= sort_header_tag("id", :caption => '#') %>
+      <%= sort_header_tag("question", :caption => l(:field_question)) %>
+      <%= sort_header_tag("category_id", :caption => l(:field_category)) %>
+      <%= sort_header_tag("viewed_count", :caption => l(:field_viewed_count)) %>
+      <%= sort_header_tag("author_id", :caption => l(:field_author)) %>
+      <%= sort_header_tag("updated_on", :caption => l(:field_updated_on), :default_order => 'desc') %>
     </tr></thead>
     <tbody>
   <% for faq in @invalid_faqs -%>	

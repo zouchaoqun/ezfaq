@@ -36,8 +36,8 @@ class EzfaqController < ApplicationController
   end
   
   def list_invalid_faqs
-    sort_init "#{Faq.table_name}.updated_on", "desc"
-    sort_update    
+    sort_init "updated_on", "desc"
+    sort_update %w(id question category_id viewed_count author_id updated_on)
     @invalid_faqs = Faq.find(:all, :conditions => "project_id = #{@project.id} and is_valid = false", :order => sort_clause)
     
     render(:template => 'ezfaq/list_invalid_faqs.html.erb', :layout => !request.xhr?)
