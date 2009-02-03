@@ -21,7 +21,7 @@ require 'redmine'
 require_dependency 'attachment_patch'
 
 # Hooks
-#require_dependency 'ezfaq_layouts_hook'
+require_dependency 'ezfaq_layouts_hook'
 
 RAILS_DEFAULT_LOGGER.info 'Starting ezFAQ plugin for RedMine'
 
@@ -29,7 +29,7 @@ Redmine::Plugin.register :ezfaq_plugin do
   name 'ezFAQ plugin'
   author 'Zou Chaoqun'
   description 'This is a FAQ management plugin for Redmine'
-  version '0.0.3'
+  version '0.0.4'
 
   # This plugin adds a project module
   # It can be enabled/disabled at project level (Project settings -> Modules)

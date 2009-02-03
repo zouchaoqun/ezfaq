@@ -23,12 +23,4 @@ module EzfaqHelper
     l(:label_updated_time_by, author_tag, time_tag)
   end
   
-  def will_pagination_links(collection)
-    html = ''
-    pages = will_paginate(collection, :prev_label => '&#171; ' + l(:label_previous), :next_label => l(:label_next) + ' &#187;', :container => false)
-    html << pages if pages
-    html << " (#{collection.offset+1}-#{collection.offset+collection.length}/#{@version_count}) | #{l(:label_display_per_page, collection.per_page)}" 
-    html
-  end
-  
 end

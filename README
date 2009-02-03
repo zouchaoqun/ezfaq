@@ -1,4 +1,4 @@
-== ezFAQ plugin 0.0.3
+== ezFAQ plugin 0.0.4
 
 This is a FAQ management plugin for Redmine
 
@@ -13,22 +13,21 @@ It's better to use the 2.1.0 version.
 
 === Plugin installation
 
-1. Install will_paginate gem
-   gem install will_paginate
+1. Copy the plugin directory(ezfaq_plugin) into the vendor/plugins directory
 
-2. Add will_paginate to the last of enviroment.rb
-   require 'will_paginate'
-
-3. Copy the plugin directory(ezfaq_plugin) into the vendor/plugins directory
-
-4. Migrate plugin:
+2. Migrate plugin:
    rake db:migrate_plugins
 
-5. Start Redmine
+3. Start Redmine
 
 Installed plugins are listed on 'Admin -> Information' screen.
 
 === Changelog
+
+0.0.4 -> Add faq into project's activity.
+         Add preview ablility to new and edit page.
+         Use redmine's pagination instead of will_paginate(so will_paginate is no longer needed).
+         Add de.yml language.
 
 0.0.3 -> Change attatchment related methods, because redmine r2116 has changed it's
          attatchment manage mechanism.
@@ -47,13 +46,13 @@ Installed plugins are listed on 'Admin -> Information' screen.
 Thanks for edavis10 at http://github.com/edavis10/ for his redmine core patch.
 (Look at lib/attachment_patch.rb)
 
-=== Language contributor
+=== Language contributors
 
 de.yml - Mathias Kühn
 
 === Roadmap
 
-0.0.4 -> Generate pdf version FAQ document including all valid FAQ.
+0.1.0 -> Generate pdf version FAQ document including all valid FAQ.
          (note: maybe delayed, if you need this feature, please let know)
 
 

@@ -104,15 +104,15 @@ class EzfaqController < ApplicationController
   end
   
   def history
+    limit = per_page_option
     @version_count = @faq.versions.count
-    
-    page_num = params[:page].to_i < 1 ? 1 : params[:page]
-    @versions = @faq.versions.paginate :page => page_num, :per_page => per_page_option, :select => 'id, updater_id, updated_on, version', :order => 'version DESC'
+    @version_pages = Paginator.new self, @version_count, limit, params['page']
+    @versions = @faq.versions.find :all, :order => 'version DESC',
+                                   :select => 'id, updater_id, updated_on, version',
+                                   :limit => limit,
+                                   :offset => @version_pages.current.offset
 
-    if @versions.out_of_bounds?
-      @versions = @faq.versions.paginate :page => 1, :per_page => per_page_option, :select => 'id, updater_id, updated_on, version', :order => 'version DESC'
-    end
-
+    render :template => 'ezfaq/history.html.erb', :layout => !request.xhr?
   end
   
   def show_history_version
