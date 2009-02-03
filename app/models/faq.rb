@@ -91,4 +91,14 @@ class Faq < ActiveRecord::Base
     "##{id}: #{question}"
   end
 
+  # Copies a faq in current project or to a new project
+  def copy(new_project)
+    faq = self.clone
+    if (faq.project_id != new_project.id)
+      faq.project_id = new_project.id
+      faq.category = nil
+    end
+    faq.save
+  end
+
 end

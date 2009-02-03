@@ -25,7 +25,8 @@ Installed plugins are listed on 'Admin -> Information' screen.
 === Changelog
 
 0.0.4 -> Add faq into project's activity.
-         Add preview ablility to new and edit page.
+         Add preview ablility to faq's new and edit page.
+         Add copy ablility to faq's show page.
          Use redmine's pagination instead of will_paginate(so will_paginate is no longer needed).
          Add de.yml language.
 

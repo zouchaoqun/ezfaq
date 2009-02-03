@@ -1,6 +1,7 @@
 <div class="contextual">
 <%= link_to_if_authorized(l(:button_update), {:controller => 'ezfaq', :action => 'edit', :id => @project, :faq_id => @faq}, :class => 'icon icon-edit', :accesskey => accesskey(:edit)) %>
 <%= link_to_if_authorized l(:button_delete), {:controller => 'ezfaq', :action => 'destroy', :id => @project, :faq_id => @faq}, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-del' %>
+<%= link_to_if_authorized l(:button_copy), {:controller => 'ezfaq', :action => 'copy', :id => @project, :faq_id => @faq }, :class => 'icon icon-copy' %>
 <%= link_to(l(:label_history), {:action => 'history', :id => @project, :faq_id => @faq}, :class => 'icon icon-history') %>
 </div>
 

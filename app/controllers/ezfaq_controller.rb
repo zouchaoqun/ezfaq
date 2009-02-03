@@ -20,7 +20,7 @@ class EzfaqController < ApplicationController
   
   layout 'base'  
   before_filter :find_project, :authorize
-  before_filter :find_faq, :only => [:show, :edit, :destroy, :history, :show_history_version]
+  before_filter :find_faq, :only => [:show, :edit, :copy, :destroy, :history, :show_history_version]
   
   helper :attachments
   include AttachmentsHelper
@@ -97,7 +97,27 @@ class EzfaqController < ApplicationController
     # Optimistic locking exception
     flash.now[:error] = l(:notice_locking_conflict)
   end
-  
+
+  def copy
+    @allowed_projects = []
+    # find projects to which the user is allowed to copy the faq
+    if User.current.admin?
+      # admin is allowed to copy faqs to any active (visible) project
+      @allowed_projects = Project.find(:all, :conditions => Project.visible_by(User.current))
+    else
+      User.current.memberships.each {|m| @allowed_projects << m.project if m.role.allowed_to?(:edit_faqs)}
+    end
+    @target_project = @allowed_projects.detect {|p| p.id.to_s == params[:new_project_id]} if params[:new_project_id]
+    @target_project ||= @project
+    if request.post?
+      @faq.copy(@target_project)
+      flash[:notice] = l(:notice_successful_update)
+      redirect_to :controller => 'ezfaq', :action => 'index', :id => @project
+      return
+    end
+    render :layout => false if request.xhr?
+  end
+
   def destroy
     @faq.destroy
     redirect_to :action => 'index', :id => @project
@@ -112,7 +132,7 @@ class EzfaqController < ApplicationController
                                    :limit => limit,
                                    :offset => @version_pages.current.offset
 
-    render :template => 'ezfaq/history.html.erb', :layout => !request.xhr?
+    render :layout => false if request.xhr?
   end
   
   def show_history_version

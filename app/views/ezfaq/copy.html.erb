@@ -1,0 +1,15 @@
+<h2><%= l(:button_copy) %></h2>
+
+<ul><%= content_tag('li', link_to("FAQ ##{@faq.id}", :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => @faq) + h(": #{@faq.question}")) %></ul>
+
+<% form_tag({}, :id => 'move_form') do %>
+<%= hidden_field_tag('faq_id', @faq.id) %>
+<div class="box tabular">
+<p><label for="new_project_id"><%=l(:field_project)%>:</label>
+<%= select_tag "new_project_id",
+               project_tree_options_for_select(@allowed_projects, :selected => @target_project) %></p>
+
+</div>
+
+<%= submit_tag l(:button_copy) %>
+<% end %>
