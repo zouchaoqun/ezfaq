@@ -72,7 +72,13 @@ class EzfaqController < ApplicationController
       end		
     end
   end
-  
+
+  # Action to preview the FAQ answer
+  def preview
+    @text = params[:faq][:answer]
+    render :partial => 'common/preview'
+  end
+
   def edit
     @faq_categories = FaqCategory.find(:all, :conditions => "project_id = #{@project.id}", :order => "position")
     

@@ -47,6 +47,10 @@ Installed plugins are listed on 'Admin -> Information' screen.
 Thanks for edavis10 at http://github.com/edavis10/ for his redmine core patch.
 (Look at lib/attachment_patch.rb)
 
+=== Language contributor
+
+de.yml - Mathias Kühn
+
 === Roadmap
 
 0.0.4 -> Generate pdf version FAQ document including all valid FAQ.

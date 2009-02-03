@@ -41,3 +41,5 @@ permission_manage_faq_categories: 管理FAQ类别
 permission_faq_setting: FAQ设置
 
 project_module_ezfaq: FAQ
+
+label_faq_plural: FAQ

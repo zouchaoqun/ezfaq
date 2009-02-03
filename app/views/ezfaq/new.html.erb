@@ -7,6 +7,15 @@
     <%= render :partial => 'ezfaq/form', :locals => {:f => f} %>
     </div>
     <%= submit_tag l(:button_create) %>
+    <%= link_to_remote l(:label_preview), 
+                       { :url => { :controller => 'ezfaq', :action => 'preview', :id => @project },
+                         :method => 'post',
+                         :update => 'preview',
+                         :with => "Form.serialize('faq-form')",
+                         :complete => "Element.scrollTo('preview')"
+                       }, :accesskey => accesskey(:preview) %>
 <% end %>
+
+<div id="preview" class="wiki"></div>
 
 <% html_title(l(:label_title_ezfaq)) -%>

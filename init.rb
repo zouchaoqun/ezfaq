@@ -20,6 +20,9 @@ require 'redmine'
 # Patches to the Redmine core. Will not work in development mode
 require_dependency 'attachment_patch'
 
+# Hooks
+#require_dependency 'ezfaq_layouts_hook'
+
 RAILS_DEFAULT_LOGGER.info 'Starting ezFAQ plugin for RedMine'
 
 Redmine::Plugin.register :ezfaq_plugin do
@@ -32,12 +35,15 @@ Redmine::Plugin.register :ezfaq_plugin do
   # It can be enabled/disabled at project level (Project settings -> Modules)
   project_module :ezfaq do
     permission :view_faqs, {:ezfaq => [:index, :show, :history, :diff, :show_history_version]}, :public => true
-    permission :add_faqs, {:ezfaq => [:new]}, :require => :loggedin
-    permission :edit_faqs, {:ezfaq => [:edit, :destroy, :list_invalid_faqs]}, :require => :member
+    permission :add_faqs, {:ezfaq => [:new, :preview]}, :require => :loggedin
+    permission :edit_faqs, {:ezfaq => [:edit, :preview, :destroy, :list_invalid_faqs]}, :require => :member
     permission :manage_faq_categories, {:ezfaq => [:add_faq_category], :faq_categories => [:index, :change_order, :edit, :destroy]}, :require => :member
     permission :faq_setting, {:ezfaq => [:faq_setting]}, :require => :member
   end
 
-  menu :project_menu, :ezfaq, { :controller => 'ezfaq', :action => 'index' }, :caption => 'FAQ'
+  menu :project_menu, :ezfaq, { :controller => 'ezfaq', :action => 'index' }, :caption => :label_title_ezfaq
+
+  # Faqs are added to the activity view
+  activity_provider :faqs
 
 end

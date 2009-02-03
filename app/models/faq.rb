@@ -3,7 +3,9 @@ class Faq < ActiveRecord::Base
   include GLoc
 
   belongs_to :category, :class_name => 'FaqCategory', :foreign_key => 'category_id'
-  
+  belongs_to :project
+  belongs_to :author, :class_name => 'User', :foreign_key => 'author_id'
+
   validates_presence_of :question, :project, :difficulty
   validates_length_of :question, :maximum => 255
 
@@ -13,7 +15,15 @@ class Faq < ActiveRecord::Base
   self.non_versioned_columns << 'viewed_count'
   self.non_versioned_columns << 'created_on'
   self.non_versioned_columns << 'author_id'
-  
+
+  acts_as_event :title => Proc.new {|o| "#{o.question}"},
+              :description => Proc.new {|o| "#{o.answer}"},
+              :datetime => :created_on,
+              :author => :author,
+              :url => Proc.new {|o| {:controller => 'ezfaq', :action => 'show', :id => o.project_id, :faq_id => o.id}}
+  acts_as_activity_provider :find_options => { :include => [:project, :author] },
+                            :author_key => :updater_id
+
   class FaqVersion
     belongs_to :category, :class_name => 'FaqCategory', :foreign_key => 'category_id'
     
