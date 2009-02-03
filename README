@@ -2,6 +2,11 @@
 
 This is a FAQ management plugin for Redmine
 
+== Upgrade Note
+
+To upgrade to version 0.0.4, need redmine dev.r22xx(for plugin hook), otherwise
+the activity page's faq entry cann't display icon.
+
 == Installation
 
 === Adding plugin support to Redmine
