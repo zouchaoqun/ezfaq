@@ -4,8 +4,13 @@ This is a FAQ management plugin for Redmine
 
 == Upgrade Note
 
-To upgrade to version 0.0.4, need redmine dev.r22xx(for plugin hook), otherwise
-the activity page's faq entry cann't display icon.
+1. Note: ezFAQ 0.0.4 ONLY test with redmine after devel.r2361.
+   There may be defect under stable versions(0.8.0 or 0.7.4)
+   Feel free to report any defect, I will correct them ASAP.
+
+2. Still waiting redmine dev.r22xx(for plugin hook), currently the activity
+   page's faq entry cann't display icon.
+   (See http://www.redmine.org/issues/show/2649)
 
 == Installation
 
