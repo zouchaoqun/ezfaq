@@ -4,9 +4,10 @@ This is a FAQ management plugin for Redmine
 
 == Upgrade Note
 
-1. Note: ezFAQ 0.0.4 ONLY test with redmine after devel.r2361.
-   There may be defect under stable versions(0.8.0 or 0.7.4)
-   Feel free to report any defect, I will correct them ASAP.
+1. WARNING: ezFAQ 0.0.4 ONLY compitable with redmine after devel.r2361.
+   It's not compitable with stable versions(0.8.0 or 0.7.4)(for redmine has changed
+   it's attachment mechanism after 0.8.0)
+   If you use redmine 0.8.0, please use ezfaq 0.0.2 at redmine's plugin wiki page.
 
 2. Still waiting redmine dev.r22xx(for plugin hook), currently the activity
    page's faq entry cann't display icon.
