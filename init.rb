@@ -44,6 +44,6 @@ Redmine::Plugin.register :ezfaq_plugin do
   menu :project_menu, :ezfaq, { :controller => 'ezfaq', :action => 'index' }, :caption => :label_title_ezfaq
 
   # Faqs are added to the activity view
-  activity_provider :faqs
+  activity_provider :faqs, :class_name => 'Faq::FaqVersion', :default => false
 
 end

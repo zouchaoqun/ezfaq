@@ -16,17 +16,25 @@ class Faq < ActiveRecord::Base
   self.non_versioned_columns << 'created_on'
   self.non_versioned_columns << 'author_id'
 
-  acts_as_event :title => Proc.new {|o| "#{o.question}"},
-              :description => Proc.new {|o| "#{o.answer}"},
-              :datetime => :created_on,
-              :author => :author,
-              :url => Proc.new {|o| {:controller => 'ezfaq', :action => 'show', :id => o.project_id, :faq_id => o.id}}
-  acts_as_activity_provider :find_options => { :include => [:project, :author] },
-                            :author_key => :updater_id
-
   class FaqVersion
     belongs_to :category, :class_name => 'FaqCategory', :foreign_key => 'category_id'
-    
+
+    acts_as_event :title => Proc.new {|o| "#{l(:label_title_ezfaq)}: #{o.question} (##{o.version})" },
+                  :description => Proc.new {|o| "#{o.answer}"},
+                  :datetime => :updated_on,
+                  :author => :updater,
+                  :type => 'faqs',
+                  :url => Proc.new {|o| o.next ?
+                            {:controller => 'ezfaq', :action => 'show_history_version', :id => o.project, :faq_id => o.faq_id, :version => o.version } :
+                            {:controller => 'ezfaq', :action => 'show', :id => o.project, :faq_id => o.faq_id } }
+
+    acts_as_activity_provider :type => 'faqs',
+                              :timestamp => "#{Faq.versioned_table_name}.updated_on",
+                              :author_key => "#{Faq.versioned_table_name}.updater_id",
+                              :permission => :view_faqs,
+                              :find_options => {:joins => "LEFT JOIN #{Project.table_name} ON #{Project.table_name}.id = #{FaqVersion.table_name}.project_id"}
+
+
     def updater
       updater_id ? User.find(:first, :conditions => "users.id = #{updater_id}") : nil
     end
@@ -46,7 +54,11 @@ class Faq < ActiveRecord::Base
     def related_version
       related_version_id ? Version.find(:first, :conditions => "versions.project_id = #{project_id} and versions.id = #{related_version_id}") : nil
     end
-    
+
+    def project
+      Project.find(:first, :conditions => "projects.id = #{project_id}")
+    end
+
   end
   
   
