@@ -45,6 +45,19 @@ class FaqMailer < Mailer
     subject "[#{faq.project.name} - #{l(:label_faq_updated)} - FAQ##{faq.id}] #{faq.question}"
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
+
+#    content_type    "multipart/alternative"
+#
+#    part :content_type => "text/html",
+#      :body => render_message("faq_update.text.html", :faq => faq,
+#         :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq))
+#
+#    part "text/plain" do |p|
+#      p.body = render_message("faq_update.text.plain", :faq => faq,
+#         :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq))
+#      #p.transfer_encoding = "base64"
+#    end
+
   end
   
 end

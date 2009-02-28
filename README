@@ -1,4 +1,4 @@
-== ezFAQ plugin 0.0.4
+== ezFAQ plugin 0.1.0
 
 This is a FAQ management plugin for Redmine
 
@@ -30,6 +30,9 @@ Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
 
+0.1.0 -> Compitable with redmine devel after r2493 and rails 2.2.2
+         Add cs.yml language.
+
 0.0.4 -> Add faq into project's activity.
          Add preview ablility to faq's new and edit page.
          Add copy ablility to faq's show page.
@@ -56,11 +59,12 @@ Thanks for edavis10 at http://github.com/edavis10/ for his redmine core patch.
 
 === Language contributors
 
+cs.yml - Marek Hulán
 de.yml - Mathias Kühn
 
 === Roadmap
 
-0.1.0 -> Generate pdf version FAQ document including all valid FAQ.
+0.2.0 -> Generate pdf version FAQ document including all valid FAQ.
          (note: maybe delayed, if you need this feature, please let know)
 
 

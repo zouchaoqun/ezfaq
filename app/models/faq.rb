@@ -1,6 +1,5 @@
 class Faq < ActiveRecord::Base
   set_locking_column :version
-  include GLoc
 
   belongs_to :category, :class_name => 'FaqCategory', :foreign_key => 'category_id'
   belongs_to :project

@@ -2,7 +2,7 @@
 
 <% form_tag({}) do %>
 <div class="box">
-<p><strong><%= l(:text_faq_category_destroy_question, @faq_count) %></strong></p>
+<p><strong><%= l(:text_faq_category_destroy_question, :value => @faq_count) %></strong></p>
 <p><label><%= radio_button_tag 'todo', 'nullify', true %> <%= l(:text_faq_category_destroy_assignments) %></label><br />
 <% if @categories.size > 0 %>
 <label><%= radio_button_tag 'todo', 'reassign', false %> <%= l(:text_faq_category_reassign_to) %></label>:
