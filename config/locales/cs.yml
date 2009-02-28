@@ -1,0 +1,46 @@
+# ezFAQ plugin
+cs:
+  label_ezfaq: ezFAQ plugin
+  label_title_ezfaq: FAQ
+  label_faq: FAQ
+  label_faq_new: Nový FAQ
+  label_faq_updated: FAQ upraven
+  label_faq_category: FAQ kategorie
+  label_faq_category_new: Nová kategorie FAQ
+  label_manage_faq_category: Upravit FAQ categorii
+  label_view_invalid_faqs: Zobrazit nevalidní FAQ
+  label_invalid_faqs: Seznam nevalidních FAQ
+  label_valid: Validní
+  label_invalid: Nevalidní
+  label_not_categorized: Nezařazeno
+  label_info_for_input_id: (Prosím vyplňte id)
+  label_manage: Spravovat
+  label_faq_setting: Nastavení FAQ
+  label_faq_note: FAQ poznámka(Zobrazeno před seznamem FAQ)
+  label_updated_time_by: Upraveno uživatelem {{author}} před {{age}}
+
+  field_question: Otázka
+  field_answer: Odpověď
+  field_difficulty: Obtížnost
+  field_viewed_count: Poečet zobrazení
+  field_related_version: Související verze
+  field_related_issue: Související úkol
+  field_related_message: Související zpráva
+  field_is_valid: Validní
+  field_faq_counts_under_category: Počet FAQ
+
+  text_faq_category_destroy_question: Nějaké FAQ ({{value}}) je již přiřazeno do této kategorie. Co chcete udělat?
+  text_faq_category_destroy_assignments: Odstranit přiřazení kategorie
+  text_faq_category_reassign_to: Přenastavit FAQ této kategorii
+  text_faq_added: FAQ {{title}} bylo vytvořeno uživatelem {{author}}.
+  text_faq_updated: FAQ {{title}} bylo upraveno uživatelem {{author}}.
+
+  permission_view_faqs: Zobraz FAQ
+  permission_add_faqs: Nové FAQ
+  permission_edit_faqs: Upravit FAQ
+  permission_manage_faq_categories: Spravovat kategorie FAQ
+  permission_faq_setting: Nastavení FAQ
+
+  project_module_ezfaq: FAQ
+
+  label_faq_plural: FAQ

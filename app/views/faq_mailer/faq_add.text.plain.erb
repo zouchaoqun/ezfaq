@@ -1,0 +1,4 @@
+<%= l(:text_faq_added, :title => "##{@faq.id}", :author => @faq.author) %>
+
+----------------------------------------
+<%= render :partial => "faq_text_plain", :locals => { :faq => @faq, :faq_url => @faq_url } %>

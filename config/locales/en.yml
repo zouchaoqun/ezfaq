@@ -1,0 +1,46 @@
+# ezFAQ plugin
+en:
+  label_ezfaq: ezFAQ plugin
+  label_title_ezfaq: FAQ
+  label_faq: FAQ
+  label_faq_new: New FAQ
+  label_faq_updated: FAQ updated
+  label_faq_category: FAQ category
+  label_faq_category_new: New FAQ category
+  label_manage_faq_category: Manage FAQ category
+  label_view_invalid_faqs: View invalid FAQ
+  label_invalid_faqs: Invalid FAQ list
+  label_valid: Valid
+  label_invalid: Invalid
+  label_not_categorized: Not categorized
+  label_info_for_input_id: (Please input id)
+  label_manage: Manage
+  label_faq_setting: FAQ setting
+  label_faq_note: FAQ note(Displayed before the FAQ list)
+  label_updated_time_by: Updated by {{author}} {{age}} ago
+
+  field_question: Question
+  field_answer: Answer
+  field_difficulty: Difficluty
+  field_viewed_count: Views
+  field_related_version: Related version
+  field_related_issue: Related issue
+  field_related_message: Related Message
+  field_is_valid: Valid
+  field_faq_counts_under_category: FAQ count
+
+  text_faq_category_destroy_question: Some FAQ ({{value}}) is assigned to this category. What do you want to do ?
+  text_faq_category_destroy_assignments: Remove category assignments
+  text_faq_category_reassign_to: Reassign FAQ to this category
+  text_faq_added: FAQ {{title}} has been created by {{author}}.
+  text_faq_updated: FAQ {{title}} has been updated by {{author}}.
+
+  permission_view_faqs: View FAQ
+  permission_add_faqs: New FAQ
+  permission_edit_faqs: Edit FAQ
+  permission_manage_faq_categories: Manage FAQ Categories
+  permission_faq_setting: FAQ Settings
+
+  project_module_ezfaq: FAQ
+
+  label_faq_plural: FAQ

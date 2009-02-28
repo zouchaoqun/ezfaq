@@ -1,0 +1,10 @@
+<h1><%= link_to "FAQ##{faq.id}: #{faq.question}", faq_url %></h1>
+
+<ul>
+<li><%=l(:field_author)%>: <%= faq.author %></li>
+<li><%=l(:field_difficulty)%>: <%= faq.difficulty %></li>
+<li><%=l(:field_assigned_to)%>: <%= faq.assigned_to %></li>
+<li><%=l(:field_category)%>: <%= faq.category %></li>
+</ul>
+<strong><%=l(:field_answer)%></strong><br />
+<%= textilizable(faq, :answer, :only_path => false) %>
