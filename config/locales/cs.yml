@@ -16,7 +16,6 @@ cs:
   label_info_for_input_id: (Prosím vyplňte id)
   label_manage: Spravovat
   label_faq_setting: Nastavení FAQ
-  label_faq_note: FAQ poznámka(Zobrazeno před seznamem FAQ)
   label_updated_time_by: Upraveno uživatelem {{author}} před {{age}}
 
   field_question: Otázka
@@ -28,6 +27,8 @@ cs:
   field_related_message: Související zpráva
   field_is_valid: Validní
   field_faq_counts_under_category: Počet FAQ
+  field_pdf_title: Title of PDF document
+  field_faq_note: FAQ poznámka(Zobrazeno před seznamem FAQ)
 
   text_faq_category_destroy_question: Nějaké FAQ ({{value}}) je již přiřazeno do této kategorie. Co chcete udělat?
   text_faq_category_destroy_assignments: Odstranit přiřazení kategorie

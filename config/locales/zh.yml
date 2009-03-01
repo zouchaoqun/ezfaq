@@ -16,7 +16,6 @@ zh:
   label_info_for_input_id: (请输入编号)
   label_manage: 管理
   label_faq_setting: FAQ配置
-  label_faq_note: FAQ说明(显示在FAQ列表前)
   label_updated_time_by: 由 {{author}} 在 {{age}} 之前更新
 
   field_question: 问题
@@ -28,6 +27,8 @@ zh:
   field_related_message: 相关讨论区帖子
   field_is_valid: 是否有效
   field_faq_counts_under_category: FAQ数量
+  field_pdf_title: PDF文档的标题
+  field_faq_note: FAQ说明(显示在FAQ列表前)
 
   text_faq_category_destroy_question: 有一些FAQ（{{value}} 个）属于此类别。您想进行哪种操作？
   text_faq_category_destroy_assignments: 删除FAQ的所属类别（FAQ变为无类别）

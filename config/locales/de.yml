@@ -16,7 +16,6 @@ de:
   label_info_for_input_id: (Bitte id eingeben)
   label_manage: Verwalten
   label_faq_setting: FAQ Einstellungen
-  label_faq_note: FAQ note(Displayed before the FAQ list)
   label_updated_time_by: Updated by {{author}} {{age}} ago
 
   field_question: Frage
@@ -28,7 +27,9 @@ de:
   field_related_message: Verwandte Nachricht
   field_is_valid: Gültig
   field_faq_counts_under_category: FAQ Anzahl
-
+  field_pdf_title: Title of PDF document
+  field_faq_note: FAQ note(Displayed before the FAQ list)
+  
   text_faq_category_destroy_question: Manche FAQs ({{value}}) sind dieser Kategorie zugeordnet. Was möchten Sie tun?
   text_faq_category_destroy_assignments: Entferne die Zuordnungen
   text_faq_category_reassign_to: FAQ wieder dieser Kategorie zuordnen

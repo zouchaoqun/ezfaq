@@ -1,10 +1,11 @@
 <h2><%= l(:label_settings) %></h2>
 
 <div id="settings">
-<% form_for :faq_setting do |f| %>
-<div class="box tabular">
-  <p><label><%=l(:label_faq_note)%></label>
-  <%= f.text_area :note, :cols => 60, :rows => 4 %></p>
+<% labelled_tabular_form_for :faq_setting, @faq_setting, :url => {:id => @project}, :html => {:id => 'faq_setting-form'} do |f| %>
+<%= error_messages_for 'faq_setting' %>
+<div class="box">
+  <p><%= f.text_field :pdf_title, :size =>80, :required => true %></p>
+  <p><%= f.text_area :note, :label => :field_faq_note,:cols => 80, :rows => 4, :required => true %></p>
 </div>
 <%= submit_tag l(:button_save) %>
 <% end %>

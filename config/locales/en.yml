@@ -16,7 +16,6 @@ en:
   label_info_for_input_id: (Please input id)
   label_manage: Manage
   label_faq_setting: FAQ setting
-  label_faq_note: FAQ note(Displayed before the FAQ list)
   label_updated_time_by: Updated by {{author}} {{age}} ago
 
   field_question: Question
@@ -28,6 +27,8 @@ en:
   field_related_message: Related Message
   field_is_valid: Valid
   field_faq_counts_under_category: FAQ count
+  field_pdf_title: Title of PDF document
+  field_faq_note: FAQ note(Displayed before the FAQ list)
 
   text_faq_category_destroy_question: Some FAQ ({{value}}) is assigned to this category. What do you want to do ?
   text_faq_category_destroy_assignments: Remove category assignments

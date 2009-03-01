@@ -53,6 +53,10 @@
 
 </div>
 
+<% other_formats_links do |f| %>
+    <%= f.link_to 'PDF', :url => {:faq_id => @faq} %>
+<% end %>
+
 <% content_for :sidebar do %>
     <%= render :partial => 'ezfaq/sidebar' %>
 <% end %>
