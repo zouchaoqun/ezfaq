@@ -1,13 +1,11 @@
-== ezFAQ plugin 0.1.9
+== ezFAQ plugin 0.2.0
 
 This is a FAQ management plugin for Redmine
 
 == Upgrade Note
 
-1. WARNING: ezFAQ 0.1.x ONLY compitable with redmine after devel.r2429.
+1. WARNING: ezFAQ 0.1.x and 0.2.x ONLY compitable with redmine after devel.r2429.
    If you use redmine 0.8.0, please use ezfaq 0.0.2 at redmine's plugin wiki page.
-
-2. 0.1.9 has mailer errors!!!
 
 == Installation
 
@@ -26,6 +24,8 @@ To add plugin support to Redmine, install engines plugin:
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.2.0 -> Fix mailer error. Thanks for Eric Davis.
 
 0.1.9 -> Add export to PDF function to FAQ and FAQ-list.
          This version has a mailer error, the mail function is disabled and will be corrected in 0.2.0.

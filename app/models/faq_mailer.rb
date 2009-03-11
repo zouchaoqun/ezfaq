@@ -30,6 +30,9 @@ class FaqMailer < Mailer
     subject "[#{faq.project.name} - #{l(:label_faq_new)} - FAQ##{faq.id}] #{faq.question}"
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
+
+    part :content_type => "text/plain", :body => render_message("faq_add.text.plain.erb", body)
+    part :content_type => "text/html", :body => render_message("faq_add.text.html.rhtml", body)
   end
   
   def faq_update(project, faq)    
@@ -46,17 +49,8 @@ class FaqMailer < Mailer
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
 
-#    content_type    "multipart/alternative"
-#
-#    part :content_type => "text/html",
-#      :body => render_message("faq_update.text.html", :faq => faq,
-#         :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq))
-#
-#    part "text/plain" do |p|
-#      p.body = render_message("faq_update.text.plain", :faq => faq,
-#         :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq))
-#      #p.transfer_encoding = "base64"
-#    end
+    part :content_type => "text/plain", :body => render_message("faq_update.text.plain.erb", body)
+    part :content_type => "text/html", :body => render_message("faq_update.text.html.rhtml", body)
 
   end
   
