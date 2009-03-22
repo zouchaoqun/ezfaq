@@ -9,7 +9,16 @@ class Faq < ActiveRecord::Base
   validates_length_of :question, :maximum => 255
 
   acts_as_attachable
-  
+
+  acts_as_searchable :columns => ["#{table_name}.question", "#{table_name}.answer"],
+                        :include => [:project]
+
+  acts_as_event :title => Proc.new {|o| "#{l(:label_title_ezfaq)} ##{o.id}: #{o.question}" },
+                  :description => Proc.new {|o| "#{o.answer}"},
+                  :datetime => :created_on,
+                  :type => 'faqs',
+                  :url => Proc.new {|o| {:controller => 'ezfaq', :action => 'show', :id => o.project, :faq_id => o.id} }
+
   acts_as_versioned :class_name => 'FaqVersion'
   self.non_versioned_columns << 'viewed_count'
   self.non_versioned_columns << 'created_on'

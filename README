@@ -1,13 +1,19 @@
-== ezFAQ plugin 0.2.0
+== ezFAQ plugin 0.2.1
 
 This is a FAQ management plugin for Redmine
 
-== Upgrade Note
+=== Note
+
+Since the plugin applies a patch to redmine core, the plugin can only run properly under
+production environment. When runs under development envrionment, the faq with attachments
+will fail to show.
+
+=== Upgrade Note
 
 1. WARNING: ezFAQ 0.1.x and 0.2.x ONLY compitable with redmine after devel.r2429.
    If you use redmine 0.8.0, please use ezfaq 0.0.2 at redmine's plugin wiki page.
 
-== Installation
+=== Installation
 
 To add plugin support to Redmine, install engines plugin:
    See: http://www.redmine.org/wiki/redmine/Plugins
@@ -24,6 +30,11 @@ To add plugin support to Redmine, install engines plugin:
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.2.1 -> Faq can be searched using redmine's search page.
+         (But you must modify redmine's search_controller to extend its search scope, this
+          would be resolved when a plugin_hook is commited)
+         (To modify search_controller, see ln51 in search_controller.rb)
 
 0.2.0 -> Fix mailer error. Thanks for Eric Davis.
 
