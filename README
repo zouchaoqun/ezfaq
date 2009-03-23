@@ -1,4 +1,4 @@
-== ezFAQ plugin 0.2.1
+== ezFAQ plugin 0.2.2
 
 This is a FAQ management plugin for Redmine
 
@@ -30,6 +30,8 @@ To add plugin support to Redmine, install engines plugin:
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.2.2 -> Fix: export to pdf hangs when pdf's title and note not set.
 
 0.2.1 -> Faq can be searched using redmine's search page.
          (But you must modify redmine's search_controller to extend its search scope, this

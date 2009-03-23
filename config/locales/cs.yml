@@ -29,13 +29,15 @@ cs:
   field_faq_counts_under_category: Počet FAQ
   field_pdf_title: Title of PDF document
   field_faq_note: FAQ poznámka(Zobrazeno před seznamem FAQ)
+  field_note: FAQ poznámka
 
   text_faq_category_destroy_question: Nějaké FAQ ({{value}}) je již přiřazeno do této kategorie. Co chcete udělat?
   text_faq_category_destroy_assignments: Odstranit přiřazení kategorie
   text_faq_category_reassign_to: Přenastavit FAQ této kategorii
   text_faq_added: FAQ {{title}} bylo vytvořeno uživatelem {{author}}.
   text_faq_updated: FAQ {{title}} bylo upraveno uživatelem {{author}}.
-
+  text_faq_pdf_title_not_set: Attention! Please specify PDF title in FAQ Settings first.
+  
   permission_view_faqs: Zobraz FAQ
   permission_add_faqs: Nové FAQ
   permission_edit_faqs: Upravit FAQ

@@ -180,8 +180,10 @@ class EzfaqController < ApplicationController
         @faq_setting.attributes = params[:faq_setting]
       end
       @faq_setting.project_id = @project.id
-      @faq_setting.save
-      redirect_to :action => 'index', :id => @project
+      if @faq_setting.save
+        redirect_to :action => 'index', :id => @project
+        return
+      end
     end
   end
   
@@ -231,17 +233,22 @@ private
 
   def faqs_to_pdf
     pdf = IFPDF.new(current_language)
-    pdf.SetTitle(@faq_setting.pdf_title)
+    pdf.SetTitle(@faq_setting.pdf_title) if (@faq_setting && @faq_setting.pdf_title)
     pdf.SetAuthor('ezFAQ for Redmine')
     pdf.AliasNbPages
     pdf.footer_date = format_date(Date.today)
     pdf.AddPage
 
     pdf.SetFontStyle('B',16)
-    pdf.Cell(200,5, @faq_setting.pdf_title)
+    if (@faq_setting && @faq_setting.pdf_title)
+      pdf.Cell(200,5, @faq_setting.pdf_title)
+    else
+      pdf.Cell(200,5, l(:text_faq_pdf_title_not_set))
+    end
+    
     pdf.Ln(10)
     pdf.SetFontStyle('',11)
-    pdf.MultiCell(180,5, @faq_setting.note)
+    pdf.MultiCell(180,5, @faq_setting.note) if (@faq_setting && @faq_setting.note)
     pdf.Ln
     pdf.Line(pdf.GetX, pdf.GetY, 180, pdf.GetY)
     pdf.Ln

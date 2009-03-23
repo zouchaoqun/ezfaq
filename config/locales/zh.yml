@@ -29,12 +29,14 @@ zh:
   field_faq_counts_under_category: FAQ数量
   field_pdf_title: PDF文档的标题
   field_faq_note: FAQ说明(显示在FAQ列表前)
+  field_note: FAQ说明
 
   text_faq_category_destroy_question: 有一些FAQ（{{value}} 个）属于此类别。您想进行哪种操作？
   text_faq_category_destroy_assignments: 删除FAQ的所属类别（FAQ变为无类别）
   text_faq_category_reassign_to: 为FAQ选择其它类别
   text_faq_added: FAQ {{title}} 已由 {{author}} 创建。
   text_faq_updated: FAQ {{title}} 已由 {{author}} 更新。
+  text_faq_pdf_title_not_set: 注意！请在FAQ配置中设置PDF文档的标题
 
   permission_view_faqs: 查看FAQ
   permission_add_faqs: 新建FAQ

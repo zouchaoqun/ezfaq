@@ -29,12 +29,14 @@ en:
   field_faq_counts_under_category: FAQ count
   field_pdf_title: Title of PDF document
   field_faq_note: FAQ note(Displayed before the FAQ list)
+  field_note: FAQ note
 
   text_faq_category_destroy_question: Some FAQ ({{value}}) is assigned to this category. What do you want to do ?
   text_faq_category_destroy_assignments: Remove category assignments
   text_faq_category_reassign_to: Reassign FAQ to this category
   text_faq_added: FAQ {{title}} has been created by {{author}}.
   text_faq_updated: FAQ {{title}} has been updated by {{author}}.
+  text_faq_pdf_title_not_set: Attention! Please specify PDF title in FAQ Settings first.
 
   permission_view_faqs: View FAQ
   permission_add_faqs: New FAQ
