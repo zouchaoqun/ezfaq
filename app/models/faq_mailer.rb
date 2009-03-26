@@ -31,8 +31,16 @@ class FaqMailer < Mailer
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
 
-    part :content_type => "text/plain", :body => render_message("faq_add.text.plain.erb", body)
-    part :content_type => "text/html", :body => render_message("faq_add.text.html.rhtml", body)
+    content_type "multipart/alternative"
+
+    part "text/plain" do |p|
+      p.body = render_message("faq_add.text.plain.erb", :body => body)
+    end
+
+    part "text/html" do |p|
+      p.body = render_message("faq_add.text.html.erb", :body => body)
+    end
+
   end
   
   def faq_update(project, faq)    
@@ -49,8 +57,15 @@ class FaqMailer < Mailer
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
 
-    part :content_type => "text/plain", :body => render_message("faq_update.text.plain.erb", body)
-    part :content_type => "text/html", :body => render_message("faq_update.text.html.rhtml", body)
+    content_type "multipart/alternative"
+
+    part "text/plain" do |p|
+      p.body = render_message("faq_update.text.plain.erb", body)
+    end
+
+    part "text/html" do |p|
+      p.body = render_message("faq_update.text.html.erb", body)
+    end
 
   end
   
