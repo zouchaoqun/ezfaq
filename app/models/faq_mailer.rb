@@ -34,11 +34,11 @@ class FaqMailer < Mailer
     content_type "multipart/alternative"
 
     part "text/plain" do |p|
-      p.body = render_message("faq_add.text.plain.erb", :body => body)
+      p.body = render_message("faq_add.text.plain.rhtml", :body => body)
     end
 
     part "text/html" do |p|
-      p.body = render_message("faq_add.text.html.erb", :body => body)
+      p.body = render_message("faq_add.text.html.rhtml", :body => body)
     end
 
   end
@@ -60,11 +60,11 @@ class FaqMailer < Mailer
     content_type "multipart/alternative"
 
     part "text/plain" do |p|
-      p.body = render_message("faq_update.text.plain.erb", body)
+      p.body = render_message("faq_update.text.plain.rhtml", body)
     end
 
     part "text/html" do |p|
-      p.body = render_message("faq_update.text.html.erb", body)
+      p.body = render_message("faq_update.text.html.rhtml", body)
     end
 
   end
