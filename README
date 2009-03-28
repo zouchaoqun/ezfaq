@@ -1,4 +1,4 @@
-== ezFAQ plugin 0.2.2
+== ezFAQ plugin 0.2.3
 
 This is a FAQ management plugin for Redmine
 
@@ -30,6 +30,9 @@ To add plugin support to Redmine, install engines plugin:
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.2.3 -> Fix: html email lost layout; text mail showed as attachment
+         Changes: new star images from Denis Tomashenko.
 
 0.2.2 -> Fix: export to pdf hangs when pdf's title and note not set.
 
@@ -67,8 +70,10 @@ Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Credits
 
-Thanks for edavis10 at http://github.com/edavis10/ for his redmine core patch.
+Thanks edavis10 at http://github.com/edavis10/ for his redmine core patch.
 (Look at lib/attachment_patch.rb)
+
+Thanks Denis Tomashenko for his wonderful star images.
 
 === Language contributors
 

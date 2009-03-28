@@ -4,7 +4,7 @@ function change_stars() {
   stars = $("stars_img");
   difficulty = $("faq_difficulty");
   position = stars.src.lastIndexOf("_") + 1;
-  new_img = stars.src.substring(0, position) + difficulty.value + ".gif";
+  new_img = stars.src.substring(0, position) + difficulty.value + ".png";
   stars.src = new_img;
   stars.alt =  $("difficulty_label").value + difficulty.value;
   stars.title = stars.alt;
@@ -28,7 +28,7 @@ function change_stars() {
                      :class => 'small', :tabindex => 199) if authorize_for('ezfaq', 'add_faq_category') %></p>
 <p>
 <%= f.select :difficulty, (1..10), {}, :required => true, :onchange => "change_stars();"%>
-<%= image_tag("stars_#{@faq.difficulty}.gif", :plugin => "ezfaq_plugin", :id => "stars_img", :alt => "#{l(:field_difficulty)}#{@faq.difficulty}", :title => "#{l(:field_difficulty)}#{@faq.difficulty}") %>
+<%= image_tag("stars_#{@faq.difficulty}.png", :plugin => "ezfaq_plugin", :id => "stars_img", :alt => "#{l(:field_difficulty)}#{@faq.difficulty}", :title => "#{l(:field_difficulty)}#{@faq.difficulty}") %>
 </p>
 <p><%= f.text_field :related_issue_id, :size => 10 %> <%= l(:label_info_for_input_id) %></p>
 <p><%= f.select :related_version_id, @project.versions.sort.collect {|v| [v.name, v.id]}, :include_blank => true %></p>

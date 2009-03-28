@@ -22,7 +22,7 @@
     <td style="width:15%"><b><%=l(:field_category)%>:</b></td>
     <td style="width:35%"><%= @faq_version.category ? @faq_version.category : "-" %></td>
     <td style="width:15%"><b><%=l(:field_difficulty)%>:</b></td>
-    <td style="width:35%"><%= image_tag("stars_#{@faq_version.difficulty}.gif", :plugin => "ezfaq_plugin", :alt => "#{l(:field_difficulty)}#{@faq_version.difficulty}", :title => "#{l(:field_difficulty)}#{@faq_version.difficulty}") %></td>
+    <td style="width:35%"><%= image_tag("stars_#{@faq_version.difficulty}.png", :plugin => "ezfaq_plugin", :alt => "#{l(:field_difficulty)}#{@faq_version.difficulty}", :title => "#{l(:field_difficulty)}#{@faq_version.difficulty}") %></td>
 </tr>
 <tr>
     <td><b><%=l(:field_assigned_to)%>:</b></td><td><%= @faq_version.assigned_to ? link_to_user(@faq_version.assigned_to) : "-"%></td>
