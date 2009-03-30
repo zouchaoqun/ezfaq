@@ -10,8 +10,7 @@ will fail to show.
 
 === Upgrade Note
 
-1. WARNING: ezFAQ 0.1.x and 0.2.x ONLY compitable with redmine after devel.r2429.
-   If you use redmine 0.8.0, please use ezfaq 0.0.2 at redmine's plugin wiki page.
+1. WARNING: This version is not compatible with Redmine 0.8.2. You should uese redmine devel at svn trunk.
 
 === Installation
 
