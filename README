@@ -20,6 +20,7 @@ To add plugin support to Redmine, install engines plugin:
 === Plugin installation
 
 1. Copy the plugin directory(ezfaq_plugin) into the vendor/plugins directory
+   NOTE: The plugin directory must be ezfaq_plugin!
 
 2. Migrate plugin:
    rake db:migrate_plugins
