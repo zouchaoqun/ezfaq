@@ -1,21 +1,27 @@
-== ezFAQ plugin 0.2.3
+=== ezFAQ plugin 0.3.1
 
-This is a FAQ management plugin for Redmine
+This is a FAQ management plugin for Redmine.
+ONLY compatible with Redmine 0.8.3 or last devel.
+
+=== Feature
+
+1. Ask question and request a user to answer it.
+2. FAQ is grouped by categories.
+3. FAQ's modification has history logs.
+4. Send notify email to the author and the assigned user who should answer the question.
+5. FAQ creation or update is added to redmine's activity.
+6. FAQ and FAQ-list can be exported to PDF document.
+7. FAQ are searchable using redmine's search engine.
 
 === Note
 
-Since the plugin applies a patch to redmine core, the plugin can only run properly under
+Since the plugin applies a patch to redmine core, it can only run properly under
 production environment. When runs under development envrionment, the faq with attachments
 will fail to show.
 
-=== Upgrade Note
-
-1. WARNING: This version is not compatible with Redmine 0.8.2. You should uese redmine devel at svn trunk.
-
-=== Installation
-
-To add plugin support to Redmine, install engines plugin:
-   See: http://www.redmine.org/wiki/redmine/Plugins
+Redmine 0.8.3 don't support plugin to extend its search scope, so you have to
+modify redmine's search controller to search FAQ.
+(Edit ln51 in search_controller.rb, add faqs to the @object_types)
 
 === Plugin installation
 
@@ -30,6 +36,11 @@ To add plugin support to Redmine, install engines plugin:
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.3.1 -> Add ru.yml.
+         Make all of the FAQ strings localizable.
+
+0.3.0 -> Check for redmine's compatibility. 
 
 0.2.3 -> Fix: html email lost layout; text mail showed as attachment
          Changes: new star images from Denis Tomashenko.
@@ -59,15 +70,6 @@ Installed plugins are listed on 'Admin -> Plugins' screen.
          attatchment manage mechanism.
          Change permission and menu into gloc strings and now they can be localized.
 
-=== Feature
-
-1. Ask question and request a user to answer it.
-2. FAQ is grouped by categories.
-3. FAQ's modification has history logs.
-4. Send notify email to the author and the assigned user who should answer the question.
-5. FAQ creation or edit is added to redmine's activity.
-6. FAQ and FAQ-list can be exported to PDF document.
-
 === Credits
 
 Thanks edavis10 at http://github.com/edavis10/ for his redmine core patch.
@@ -79,8 +81,9 @@ Thanks Denis Tomashenko for his wonderful star images.
 
 cs.yml - Marek Hulán
 de.yml - Mathias Kühn
+ru.yml - Alexander Kirillov
 
 === Contact info
 
-Homepage -> http://218.107.133.32:5000/projects/show/ezwork powered by redmine
-Email    -> zouchaoqun@gmail.com 
+Homepage -> http://218.107.133.32:5000/projects/ezwork powered by redmine
+Email    -> zouchaoqun@gmail.com

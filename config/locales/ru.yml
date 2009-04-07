@@ -1,0 +1,35 @@
+# ezFAQ plugin
+label_ezfaq: Дополнение ezFAQ
+label_title_ezfaq: ЧаВо
+label_faq: ЧаВо
+label_faq_new: Новый ЧаВо
+label_faq_updated: ЧаВо обновлен
+label_faq_category: Категория ЧаВо
+label_faq_category_new: Новая категория ЧаВо
+label_manage_faq_category: Настроить категории ЧаВо
+label_view_invalid_faqs: Неправильные ответы
+label_invalid_faqs: Список неправильных ответов
+label_valid: Правильный
+label_invalid: Неправильный
+label_not_categorized: Без категории
+label_info_for_input_id: (введите номер)
+label_manage: Управление
+label_faq_setting: Настройки ЧаВо
+label_faq_note: Заметка ЧаВо (выводится перед списком вопросов)
+label_updated_time_by: Обновлен %s %s назад
+
+field_question: Вопрос
+field_answer: Ответ
+field_difficulty: Трудность
+field_viewed_count: Просмотров
+field_related_version: Связанная версия
+field_related_issue: Связанная задача
+field_related_message: Связанное сообщение
+field_is_valid: Оценка
+field_faq_counts_under_category: Всего вопросов
+
+text_faq_category_destroy_question: Некоторые ЧаВо (%d) отнесены к этой категории. Что Вы хотите сделать ?
+text_faq_category_destroy_assignments: Убрать привязку к категории
+text_faq_category_reassign_to: Перевести вопросы в эту категорию
+text_faq_added: ЧаВо %s добавлен %s.
+text_faq_updated: ЧаВо %s обновлен %s.

@@ -26,9 +26,9 @@ Redmine::Plugin.register :ezfaq_plugin do
   name 'ezFAQ plugin'
   author 'Zou Chaoqun'
   description 'This is a FAQ management plugin for Redmine'
-  version '0.2.3'
+  version '0.3.1'
   url 'http://218.107.133.32:5000/projects/ezwork'
-  author_url 'http://218.107.133.32:5000'
+  author_url 'mailto:zouchaoqun@gmail.com'
 
   project_module :ezfaq do
     permission :view_faqs, {:ezfaq => [:index, :show, :history, :diff, :show_history_version]}, :public => true

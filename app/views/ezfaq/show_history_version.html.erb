@@ -1,7 +1,7 @@
 <div class="contextual">
 </div>
 
-<h2>FAQ#<%= @faq_version.faq_id %> <%=l(:label_version) %><%= @faq_version.version %></h2>
+<h2><%= l(:label_faq) %>#<%= @faq_version.faq_id %> <%=l(:label_version) %><%= @faq_version.version %></h2>
 
 <p>
 <%= link_to(('&#171; ' + l(:label_previous)), :action => 'show_history_version', :id => @project, :faq_id => @faq, :version => (@faq_version.version - 1)) + " - " if @faq_version.version > 1 %>

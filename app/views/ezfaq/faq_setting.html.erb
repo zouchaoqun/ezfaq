@@ -10,3 +10,9 @@
 <%= submit_tag l(:button_save) %>
 <% end %>
 </div>
+
+<% content_for :sidebar do %>
+    <%= render :partial => 'ezfaq/sidebar' %>
+<% end %>
+
+<% html_title(l(:label_title_ezfaq)) -%>

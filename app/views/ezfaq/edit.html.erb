@@ -1,4 +1,4 @@
-<h2>FAQ #<%= @faq.id %></h2>
+<h2><%= l(:label_faq) %>#<%= @faq.id %></h2>
 
 <% labelled_tabular_form_for :faq, @faq, 
                              :url => {:action => 'edit', :id => @project, :faq_id => @faq},
