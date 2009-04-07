@@ -1,4 +1,4 @@
-=== ezFAQ plugin 0.3.1
+=== ezFAQ plugin 0.3.2
 
 This is a FAQ management plugin for Redmine.
 ONLY compatible with Redmine 0.8.3 or last devel.
@@ -36,6 +36,8 @@ modify redmine's search controller to search FAQ.
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.3.2 -> Make some FAQ strings localizable.(missed in 0.3.1)
 
 0.3.1 -> Add ru.yml.
          Make all of the FAQ strings localizable.

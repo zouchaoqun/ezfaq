@@ -205,7 +205,7 @@ private
     faq_setting = FaqSetting.find(:first, :conditions => "project_id = #{@project.id}")
 
     pdf = IFPDF.new(current_language)
-    pdf.SetTitle("FAQ-#{@faq.question}")
+    pdf.SetTitle("#{l(:label_faq)}-#{@faq.question}")
     pdf.SetAuthor('ezFAQ for Redmine')
     pdf.AliasNbPages
     pdf.footer_date = format_date(Date.today)
