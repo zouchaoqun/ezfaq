@@ -197,7 +197,7 @@ private
   def find_faq
     @faq = Faq.find(:first, :conditions => "project_id = #{@project.id} and id = #{params[:faq_id]}")
     render_404 unless @faq
-  rescue ActiveRecord::RecordNotFound
+  rescue
     render_404
   end
 
