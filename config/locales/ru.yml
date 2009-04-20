@@ -17,7 +17,7 @@ ru:
   label_manage: Управление
   label_faq_setting: Настройки ЧаВо
   label_faq_note: Заметка ЧаВо (выводится перед списком вопросов)
-  label_updated_time_by: Обновлен %s %s назад
+  label_updated_time_by: Обновлен {{author}} {{age}} назад
 
   field_question: Вопрос
   field_answer: Ответ
@@ -29,11 +29,11 @@ ru:
   field_is_valid: Оценка
   field_faq_counts_under_category: Всего вопросов
 
-  text_faq_category_destroy_question: Некоторые ЧаВо (%d) отнесены к этой категории. Что Вы хотите сделать ?
+  text_faq_category_destroy_question: Некоторые ЧаВо ({{value}}) отнесены к этой категории. Что Вы хотите сделать ?
   text_faq_category_destroy_assignments: Убрать привязку к категории
   text_faq_category_reassign_to: Перевести вопросы в эту категорию
-  text_faq_added: ЧаВо %s добавлен %s.
-  text_faq_updated: ЧаВо %s обновлен %s.
+  text_faq_added: ЧаВо {{title}} добавлен {{author}}.
+  text_faq_updated: ЧаВо {{title}} обновлен {{author}}.
 
   permission_add_faq: Добавление вопросов
   permission_edit_faq: Изменение вопросов
