@@ -16,7 +16,6 @@ ru:
   label_info_for_input_id: (введите номер)
   label_manage: Управление
   label_faq_setting: Настройки ЧаВо
-  label_faq_note: Заметка ЧаВо (выводится перед списком вопросов)
   label_updated_time_by: Обновлен {{author}} {{age}} назад
 
   field_question: Вопрос
@@ -28,13 +27,18 @@ ru:
   field_related_message: Связанное сообщение
   field_is_valid: Оценка
   field_faq_counts_under_category: Всего вопросов
+  field_pdf_title: Title of PDF document
+  field_faq_note: Заметка ЧаВо (выводится перед списком вопросов)
+  field_note: FAQ note
 
   text_faq_category_destroy_question: Некоторые ЧаВо ({{value}}) отнесены к этой категории. Что Вы хотите сделать ?
   text_faq_category_destroy_assignments: Убрать привязку к категории
   text_faq_category_reassign_to: Перевести вопросы в эту категорию
   text_faq_added: ЧаВо {{title}} добавлен {{author}}.
   text_faq_updated: ЧаВо {{title}} обновлен {{author}}.
-
+  text_faq_pdf_title_not_set: Attention! Please specify PDF title in FAQ Settings first.
+  
+  permission_view_faqs: View FAQ
   permission_add_faq: Добавление вопросов
   permission_edit_faq: Изменение вопросов
   permission_manage_faq_categories: Настройка категорий ЧаВо
