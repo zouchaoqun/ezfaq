@@ -1,4 +1,4 @@
-=== ezFAQ plugin 0.3.4
+=== ezFAQ plugin 0.3.5
 
 This is a FAQ management plugin for Redmine.
 ONLY compatible with Redmine last devel. NOT compatible with Redmine 0.8.x
@@ -36,6 +36,8 @@ modify redmine's search controller to search FAQ.
 Installed plugins are listed on 'Admin -> Plugins' screen.
 
 === Changelog
+
+0.3.5 -> Correct a mailer error when adding new faqs.
 
 0.3.4 -> Update readme: only compitable with redmine devel. Some bug fix.
 
