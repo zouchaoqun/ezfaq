@@ -18,7 +18,12 @@
 require 'redmine'
 
 # Patches to the Redmine core. Will not work in development mode
-require_dependency 'attachment_patch'
+require 'dispatcher'
+require 'attachment_patch'
+Dispatcher.to_prepare do
+  Attachment.send(:include, AttachmentPatch)
+end
+
 # Hooks
 require_dependency 'ezfaq_layouts_hook'
 

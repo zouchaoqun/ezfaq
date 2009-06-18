@@ -2,7 +2,6 @@
 # This patch is downloaded from his redmine-budget-plugin.
 # http://github.com/edavis10/redmine-budget-plugin/tree/master
 #
-
 require_dependency 'attachment'
 
 # Patches Redmine's Attachments dynamically. Adds a relationship
@@ -15,7 +14,6 @@ module AttachmentPatch
 
     # Same as typing in the class
     base.class_eval do
-      unloadable # Send unloadable so it will not be unloaded in development
       belongs_to :faq
 
     end
@@ -30,6 +28,3 @@ module AttachmentPatch
 
   end
 end
-
-# Add module to Attachment
-Attachment.send(:include, AttachmentPatch)

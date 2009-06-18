@@ -1,4 +1,5 @@
 class Faq < ActiveRecord::Base
+  unloadable
   set_locking_column :version
 
   belongs_to :category, :class_name => 'FaqCategory', :foreign_key => 'category_id'
