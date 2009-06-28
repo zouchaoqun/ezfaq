@@ -1,0 +1,49 @@
+# ezFAQ plugin
+zh:
+  label_ezfaq: ezFAQ plugin
+  label_title_ezfaq: FAQのタイトル
+  label_faq: FAQ
+  label_faq_new: 新規FAQ
+  label_faq_updated: FAQの更新
+  label_faq_category: FAQのカテゴリ
+  label_faq_category_new: 新しいFAQのカテゴリ
+  label_manage_faq_category: FAQのカテゴリを編集
+  label_view_invalid_faqs: 無効なFAQを表示
+  label_invalid_faqs: 無効なFAQ一覧
+  label_valid: 有効
+  label_invalid: 無効
+  label_not_categorized: 未分類
+  label_info_for_input_id: (IDを入力して下さい)
+  label_manage: 管理
+  label_faq_setting: FAQの設定
+  label_updated_time_by:  %s %s 日前に更新
+
+  field_question: 質問
+  field_answer: 回答
+  field_difficulty: 難易度
+  field_viewed_count: 表示
+  field_related_version: 関連するバージョン
+  field_related_issue: 関連するチケット
+  field_related_message: 関連するメッセージ
+  field_is_valid: 有効
+  field_faq_counts_under_category: FAQのカウント
+  field_pdf_title: Title of PDF document
+  field_faq_note: FAQ について(FAQ一覧の前に表示されます)
+  field_note: FAQ について
+
+  text_faq_category_destroy_question: いくつかのFAQ (%d) は、このカテゴリに分類されています。どうしましょうか?
+  text_faq_category_destroy_assignments: カテゴリからFAQを解除する
+  text_faq_category_reassign_to: FAQをこのカテゴリに関連付けする
+  text_faq_added: FAQ %s は、 %s　が作成しました.
+  text_faq_updated: FAQ %s は %s　によって更新されました。
+  text_faq_pdf_title_not_set: Attention! Please specify PDF title in FAQ Settings first.
+
+  permission_view_faqs: View FAQ
+  permission_add_faqs: New FAQ
+  permission_edit_faqs: Edit FAQ
+  permission_manage_faq_categories: Manage FAQ Categories
+  permission_faq_setting: FAQ Settings
+
+  project_module_ezfaq: FAQ
+
+  label_faq_plural: FAQ
