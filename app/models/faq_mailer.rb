@@ -27,7 +27,7 @@ class FaqMailer < Mailer
     
     recipients mail_addresses.compact.uniq
 
-    subject "[#{faq.project.name} - #{l(:label_faq_new)} - l(:label_faq)##{faq.id}] #{faq.question}"
+    subject "[#{faq.project.name} - #{l(:label_faq_new)} - #{l(:label_faq)}##{faq.id}] #{faq.question}"
     body :faq => faq,
          :faq_url => url_for(:controller => 'ezfaq', :action => 'show', :id => project, :faq_id => faq)
 
