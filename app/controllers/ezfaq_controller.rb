@@ -31,8 +31,8 @@ class EzfaqController < ApplicationController
   include Redmine::Export::PDF
   
   def index
-    @categorized_faqs = Faq.find(:all, :conditions => "project_id = #{@project.id} and category_id is not null and is_valid = true")
-    @not_categorized_faqs = Faq.find(:all, :conditions => "project_id = #{@project.id} and category_id is null and is_valid = true", :order => "question")
+    @categorized_faqs = Faq.find(:all, :conditions => ["project_id = #{@project.id} and category_id is not null and is_valid = ?", true])
+    @not_categorized_faqs = Faq.find(:all, :conditions => ["project_id = #{@project.id} and category_id is null and is_valid = ?", true], :order => "question")
     @faq_setting = FaqSetting.find(:first, :conditions => "project_id = #{@project.id}")
 
     respond_to do |format|
@@ -44,7 +44,7 @@ class EzfaqController < ApplicationController
   def list_invalid_faqs
     sort_init "updated_on", "desc"
     sort_update %w(id question category_id viewed_count author_id updated_on)
-    @invalid_faqs = Faq.find(:all, :conditions => "project_id = #{@project.id} and is_valid = false", :order => sort_clause)
+    @invalid_faqs = Faq.find(:all, :conditions => ["project_id = #{@project.id} and is_valid = ?", false], :order => sort_clause)
     
     render(:template => 'ezfaq/list_invalid_faqs.html.erb', :layout => !request.xhr?)
   end
