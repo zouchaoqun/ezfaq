@@ -41,6 +41,7 @@ zh:
   permission_view_faqs: View FAQ
   permission_add_faqs: New FAQ
   permission_edit_faqs: Edit FAQ
+  permission_delete_faqs: Delete FAQ
   permission_manage_faq_categories: Manage FAQ Categories
   permission_faq_setting: FAQ Settings
 

@@ -41,6 +41,7 @@ zh:
   permission_view_faqs: 查看FAQ
   permission_add_faqs: 新建FAQ
   permission_edit_faqs: 编辑FAQ
+  permission_delete_faqs: 删除FAQ
   permission_manage_faq_categories: 管理FAQ类别
   permission_faq_setting: FAQ设置
 

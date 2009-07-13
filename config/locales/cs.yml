@@ -41,6 +41,7 @@ cs:
   permission_view_faqs: Zobraz FAQ
   permission_add_faqs: Nové FAQ
   permission_edit_faqs: Upravit FAQ
+  permission_delete_faqs: Delete FAQ
   permission_manage_faq_categories: Spravovat kategorie FAQ
   permission_faq_setting: Nastavení FAQ
 

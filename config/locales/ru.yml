@@ -41,6 +41,7 @@ ru:
   permission_view_faqs: View FAQ
   permission_add_faq: Добавление вопросов
   permission_edit_faq: Изменение вопросов
+  permission_delete_faqs: Delete FAQ
   permission_manage_faq_categories: Настройка категорий ЧаВо
   permission_faq_setting: Настройка ЧаВо
 
