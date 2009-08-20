@@ -1,0 +1,50 @@
+# ezFAQ plugin
+it:
+  label_ezfaq: ezFAQ plugin
+  label_title_ezfaq: FAQ
+  label_faq: FAQ
+  label_faq_new: Nuova FAQ
+  label_faq_updated: FAQ aggiornata
+  label_faq_category: Categoria FAQ
+  label_faq_category_new: Nuova categoria FAQ
+  label_manage_faq_category: Gestione categorie FAQ
+  label_view_invalid_faqs: Visualizza FAQ non valide
+  label_invalid_faqs: Elenco FAQ non valide
+  label_valid: Valida
+  label_invalid: Non valida
+  label_not_categorized: Senza categoira
+  label_info_for_input_id: (Inserisci un id)
+  label_manage: Gestione
+  label_faq_setting: Impostazioni FAQ
+  label_updated_time_by: Aggiornato da %s %s fa
+
+  field_question: Domanda
+  field_answer: Risposta
+  field_difficulty: Difficoltà
+  field_viewed_count: Visite
+  field_related_version: Versione collegata
+  field_related_issue: Issue collegato
+  field_related_message: Messaggio collegato
+  field_is_valid: Valido
+  field_faq_counts_under_category: Numero FAQ
+  field_pdf_title: Title of PDF document
+  field_faq_note: Note (viene mostrato prima dell'elenco delle FAQ)
+  field_note: FAQ note
+
+  text_faq_category_destroy_question: Alcune FAQ (%d) sono attualmente assegnate a questa categoria. Cosa vuoi fare?
+  text_faq_category_destroy_assignments: Elimina associazione con la categoria
+  text_faq_category_reassign_to: Assegna le FAQ a questa categoria
+  text_faq_added: La FAQ %s è stata creata da %s.
+  text_faq_updated: La FAQ %s è stata aggiornata da %s.
+  text_faq_pdf_title_not_set: Attention! Please specify PDF title in FAQ Settings first.
+
+  permission_view_faqs: View FAQ
+  permission_add_faqs: New FAQ
+  permission_edit_faqs: Edit FAQ
+  permission_delete_faqs: Delete FAQ
+  permission_manage_faq_categories: Manage FAQ Categories
+  permission_faq_setting: FAQ Settings
+
+  project_module_ezfaq: FAQ
+
+  label_faq_plural: FAQ
