@@ -1,7 +1,7 @@
 # ezFAQ plugin
-zh:
+ja:
   label_ezfaq: ezFAQ plugin
-  label_title_ezfaq: FAQのタイトル
+  label_title_ezfaq: FAQ
   label_faq: FAQ
   label_faq_new: 新規FAQ
   label_faq_updated: FAQの更新
@@ -16,7 +16,7 @@ zh:
   label_info_for_input_id: (IDを入力して下さい)
   label_manage: 管理
   label_faq_setting: FAQの設定
-  label_updated_time_by:  %s %s 日前に更新
+  #label_updated_time_by:  %s %s 日前に更新
 
   field_question: 質問
   field_answer: 回答
