@@ -1,0 +1,50 @@
+# ezFAQ plugin
+zh:
+  label_ezfaq: ezFAQ 插件
+  label_title_ezfaq: FAQ
+  label_faq: FAQ
+  label_faq_new: 新建FAQ
+  label_faq_updated: FAQ更新
+  label_faq_category: FAQ類別
+  label_faq_category_new: 新建FAQ類別
+  label_manage_faq_category: 管理FAQ類別
+  label_view_invalid_faqs: 查看無效FAQ
+  label_invalid_faqs: 無效FAQ列表
+  label_valid: 有效
+  label_invalid: 無效
+  label_not_categorized: 未分類
+  label_info_for_input_id: (請輸入編號)
+  label_manage: 管理
+  label_faq_setting: FAQ配置
+  label_updated_time_by: 由 {{author}} 在 {{age}} 之前更新
+
+  field_question: 問題
+  field_answer: 解答
+  field_difficulty: 難度
+  field_viewed_count: 查看次數
+  field_related_version: 相關版本
+  field_related_issue: 相關問題
+  field_related_message: 相關討論區帖子
+  field_is_valid: 是否有效
+  field_faq_counts_under_category: FAQ數量
+  field_pdf_title: PDF文檔的標題
+  field_faq_note: FAQ說明(顯示在FAQ列表前)
+  field_note: FAQ說明
+
+  text_faq_category_destroy_question: 有一些FAQ（{{value}} 個）屬於此類別。您想進行哪種操作？
+  text_faq_category_destroy_assignments: 刪除FAQ的所屬類別（FAQ變為無類別）
+  text_faq_category_reassign_to: 為FAQ選擇其它類別
+  text_faq_added: FAQ {{title}} 已由 {{author}} 創建。
+  text_faq_updated: FAQ {{title}} 已由 {{author}} 更新。
+  text_faq_pdf_title_not_set: 注意！請在FAQ配置中設置PDF文檔的標題
+
+  permission_view_faqs: 查看FAQ
+  permission_add_faqs: 新建FAQ
+  permission_edit_faqs: 編輯FAQ
+  permission_delete_faqs: 刪除FAQ
+  permission_manage_faq_categories: 管理FAQ類別
+  permission_faq_setting: FAQ設置
+
+  project_module_ezfaq: FAQ
+
+  label_faq_plural: FAQ
