@@ -1,0 +1,13 @@
+2011-03-09
+==========
+This is a fork of original ezfaq, a FAQ management plugin for Redmine by Zou Chaoqun. The goal is to fix bugs and merge existing patches for daily use.
+
+Updates including:
+
+ * Add zh-TW locale (convert from zh)
+ * Add de locale (by Cedric Ziel)
+ * Add pt and pt-BR locales (by Marcelo Romulo Fernandes)
+ * Modify fr locale (by Thibaut Cuvelier)
+ * Fix issue 7 of the original code to run on redmine 1.0.5
+
+The README.org containss more information of the original ezfaq.
