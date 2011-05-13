@@ -1,0 +1,50 @@
+# Polish translation by Tomasz Sawicki (https://github.com/Furgas)
+pl:
+  label_ezfaq: ezFAQ plugin
+  label_title_ezfaq: FAQ
+  label_faq: FAQ
+  label_faq_new: Nowe FAQ
+  label_faq_updated: FAQ zaktualizowane
+  label_faq_category: Kategoria FAQ
+  label_faq_category_new: Nowa kategoria FAQ
+  label_manage_faq_category: Zarządzaj kategoriami FAQ
+  label_view_invalid_faqs: Wyświetl błędne FAQ
+  label_invalid_faqs: Lista błędnych FAQ
+  label_valid: Poprawne
+  label_invalid: Błędne
+  label_not_categorized: Bez kategorii
+  label_info_for_input_id: (Wpisz id)
+  label_manage: Zarządzaj
+  label_faq_setting: Ustawienia FAQ
+  label_updated_time_by: Zaktualizowane przez {{author}} {{age}} temu
+
+  field_question: Pytanie
+  field_answer: Odpowiedź
+  field_difficulty: Trudność
+  field_viewed_count: Liczba wyświetleń
+  field_related_version: Powiązana wersja
+  field_related_issue: Powiązane zagadnienie
+  field_related_message: Powiązana wiadomość
+  field_is_valid: Poprawne
+  field_faq_counts_under_category: Liczba FAQ
+  field_pdf_title: Tytuł dokumentu PDF
+  field_faq_note: Opis FAQ (Wyświetlany przed lista pytań)
+  field_note: Notatka do FAQ
+
+  text_faq_category_destroy_question: Z tą kategorią powiązane są FAQ ({{value}}). Co chcesz zrobić?
+  text_faq_category_destroy_assignments: Usuń przypisanie do kategorii
+  text_faq_category_reassign_to: Przydziel FAQ do tej kategorii
+  text_faq_added: FAQ {{title}} zostało stworzone przez {{author}}.
+  text_faq_updated: FAQ {{title}} zostało zaktualizowane przez {{author}}.
+  text_faq_pdf_title_not_set: Uwaga! Ustaw tytuł dokumentu w Ustawieniach FAQ.
+
+  permission_view_faqs: Przeglądanie FAQ
+  permission_add_faqs: Dodanie FAQ
+  permission_edit_faqs: Edycja FAQ
+  permission_delete_faqs: Usunięcie FAQ
+  permission_manage_faq_categories: Zarządzanie kategoriami FAQ
+  permission_faq_setting: Ustawienia FAQ
+
+  project_module_ezfaq: FAQ
+
+  label_faq_plural: FAQ
