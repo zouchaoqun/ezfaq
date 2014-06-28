@@ -1,0 +1,100 @@
+=== ezFAQ plugin 0.3.5
+
+This is a FAQ management plugin for Redmine.
+ONLY compatible with Redmine last devel. NOT compatible with Redmine 0.8.x
+
+=== Feature
+
+1. Ask question and request a user to answer it.
+2. FAQ is grouped by categories.
+3. FAQ's modification has history logs.
+4. Send notify email to the author and the assigned user who should answer the question.
+5. FAQ creation or update is added to redmine's activity.
+6. FAQ and FAQ-list can be exported to PDF document.
+7. FAQ are searchable using redmine's search engine.
+
+=== Note
+
+Since the plugin applies a patch to redmine core, it can only run properly under
+production environment. When runs under development envrionment, the faq with attachments
+will fail to show.
+
+Redmine currently doesn't support plugin to extend its search scope, so you have to
+modify redmine's search controller to search FAQ.
+(Edit ln51 in search_controller.rb, add faqs to the @object_types)
+
+=== Plugin installation
+
+1. Copy the plugin directory(ezfaq_plugin) into the vendor/plugins directory
+   NOTE: The plugin directory must be ezfaq_plugin!
+
+2. Migrate plugin:
+   rake db:migrate_plugins
+
+3. Start Redmine
+
+Installed plugins are listed on 'Admin -> Plugins' screen.
+
+=== Changelog
+
+0.3.5 -> Correct a mailer error when adding new faqs.
+
+0.3.4 -> Update readme: only compitable with redmine devel. Some bug fix.
+
+0.3.3 -> Complete ru.yml.
+
+0.3.2 -> Make some FAQ strings localizable.(missed in 0.3.1)
+
+0.3.1 -> Add ru.yml.
+         Make all of the FAQ strings localizable.
+
+0.3.0 -> Check for redmine's compatibility. 
+
+0.2.3 -> Fix: html email lost layout; text mail showed as attachment
+         Changes: new star images from Denis Tomashenko.
+
+0.2.2 -> Fix: export to pdf hangs when pdf's title and note not set.
+
+0.2.1 -> Faq can be searched using redmine's search page.
+         (But you must modify redmine's search_controller to extend its search scope, this
+          would be resolved when a plugin_hook is commited)
+         (To modify search_controller, see ln51 in search_controller.rb)
+
+0.2.0 -> Fix mailer error. Thanks for Eric Davis.
+
+0.1.9 -> Add export to PDF function to FAQ and FAQ-list.
+         This version has a mailer error, the mail function is disabled and will be corrected in 0.2.0.
+
+0.1.0 -> Compitable with redmine devel after r2493 and rails 2.2.2
+         Add cs.yml language.
+
+0.0.4 -> Add faq into project's activity.
+         Add preview ablility to faq's new and edit page.
+         Add copy ablility to faq's show page.
+         Use redmine's pagination instead of will_paginate(so will_paginate is no longer needed).
+         Add de.yml language.
+
+0.0.3 -> Change attatchment related methods, because redmine r2116 has changed it's
+         attatchment manage mechanism.
+         Change permission and menu into gloc strings and now they can be localized.
+
+=== Credits
+
+Thanks edavis10 at http://github.com/edavis10/ for his redmine core patch.
+(Look at lib/attachment_patch.rb)
+
+Thanks Denis Tomashenko for his wonderful star images.
+
+=== Language contributors
+
+cs.yml - Marek Hulán
+de.yml - Mathias Kühn
+ru.yml - Alexander Kirillov
+fr.yml - james pic
+ja.yml - Akiko Takano
+it.yml - Davide Saurino
+
+=== Contact info
+
+Homepage -> http://ezwork.techcon.thtf.com.cn/projects/ezwork powered by redmine
+Email    -> zouchaoqun@gmail.com

@@ -74,7 +74,8 @@ class EzfaqController < ApplicationController
       @faq.is_valid = true
       @faq.viewed_count = 0
       if @faq.save
-        attach_files(@faq, params[:attachments])
+        attachments = Attachment.attach_files(@faq, params[:attachments])
+        render_attachment_warning_if_needed(@faq)
         flash[:notice] = l(:notice_successful_create)
         FaqMailer.deliver_faq_add(@project, @faq)
         redirect_to :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => @faq
@@ -96,7 +97,8 @@ class EzfaqController < ApplicationController
       @faq.attributes = params[:faq]
       @faq.updater_id = User.current.id
       if @faq.save
-        attach_files(@faq, params[:attachments])
+        attachments = Attachment.attach_files(@faq, params[:attachments])
+        render_attachment_warning_if_needed(@faq)
         flash[:notice] = l(:notice_successful_update)
         FaqMailer.deliver_faq_update(@project, @faq)
         redirect_to :controller => 'ezfaq', :action => 'show', :id => @project, :faq_id => @faq
